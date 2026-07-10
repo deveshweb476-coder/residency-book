@@ -1431,6 +1431,9 @@ body {
         height: 334px;
         margin: 0 auto;
     }
+    .flip-gallery-container .unite {
+        background-size: 220px 334px;
+    }
 
     /* ── AUTHOR NOTE SECTION ── */
     .note-container {
@@ -1482,4 +1485,5 @@ body {
     .s2a-dual-cards { height: 260px; }
     .author-heading { font-size: 1.7rem; }
     .flip-gallery-container { width: 180px; height: 273px; }
+    .flip-gallery-container .unite { background-size: 180px 273px; }
 }
