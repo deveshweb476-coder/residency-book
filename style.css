@@ -1112,48 +1112,7 @@ body {
     .s2-left-inner { padding: 60px 40px; }
 }
 
-@media (max-width: 768px) {
-    .navbar { padding: 20px 24px; }
-    .navbar.scrolled { padding: 14px 24px; }
-    .nav-links { gap: 20px; }
-
-    /* Hero Panel 1 mobile */
-    .hero-panel-top { height: 56vw; min-height: 300px; }
-    .hero-panel-top-content { margin-right: 0; }
-    .hero-photo-zone { width: 100%; opacity: 0.3; }
-    .hero-name-line1 { font-size: clamp(2.2rem, 8vw, 4rem); }
-
-    /* Hero Panel 2 mobile */
-    .hero-panel-bottom {
-        flex-direction: column-reverse;
-        padding: 36px 6% 48px;
-        gap: 28px;
-    }
-    .hpb-left { padding-right: 0; }
-    .hpb-right { padding-left: 0; }
-    .hpb-book-wrap { width: 120px; }
-
-    /* Section 2 mobile */
-    .s2-two-panel { flex-direction: column; }
-    .s2-left, .s2-right { width: 100%; }
-    .s2-right { min-height: 60vh; }
-    .s2-left-inner { padding: 50px 24px; }
-    .s2-ch-label { top: 24px; left: 24px; }
-
-    /* Journey */
-    .journey-row, .journey-row.row-flip { flex-direction: column; min-height: auto; }
-    .journey-img-half { flex: 0 0 auto; width: 100%; height: 50vw; min-height: 260px; }
-    .journey-img { min-height: 260px; }
-    .img-left .journey-img, .img-right .journey-img { -webkit-mask-image: none; mask-image: none; }
-    .journey-text-half { flex: 0 0 auto; width: 100%; padding: 40px 6%; text-align: left; align-items: flex-start; }
-    .text-left { text-align: left; align-items: flex-start; }
-    .text-left .j-desc { margin-left: 0; }
-    .j-number { font-size: 4rem; }
-
-    /* Reviews */
-    .reviews-container { flex-direction: column; }
-    .review-list-wrapper { max-height: 400px; }
-}
+/* Old 768px block removed — replaced by comprehensive mobile overhaul below */
 
 /* SECTION 5: LIVE FEEDBACK */
 .reviews-section {
@@ -1299,4 +1258,228 @@ body {
     font-size: 0.85rem;
     line-height: 1.45;
     font-family: 'Inter', sans-serif;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE OVERHAUL — max-width: 767px
+   ============================================================ */
+@media (max-width: 767px) {
+
+    /* ── NAVBAR ── */
+    .navbar { padding: 16px 20px; }
+    .navbar.scrolled { padding: 12px 20px; }
+    .nav-links { gap: 14px; }
+    .nav-links a { font-size: 0.6rem; letter-spacing: 0.12em; }
+
+    /* ── HERO PANEL TOP ── */
+    .hero-panel-top {
+        height: auto;
+        min-height: 100svh;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 40px;
+    }
+    .hero-photo-zone {
+        position: absolute;
+        width: 100%;
+        right: 0; top: 0; bottom: 0;
+        opacity: 0.35;
+    }
+    .hero-panel-top-content {
+        margin-right: 0;
+        padding: 0 24px;
+        text-align: center;
+        position: relative;
+        z-index: 6;
+    }
+    .hero-name-line1 { font-size: clamp(2.6rem, 11vw, 4rem); }
+    .hero-cred-strip { flex-wrap: wrap; gap: 6px; justify-content: center; }
+    .hero-socials-top { top: 70px; right: 20px; }
+
+    /* ── HERO PANEL BOTTOM ── */
+    .hero-panel-bottom {
+        flex-direction: column;
+        padding: 40px 24px 48px;
+        gap: 32px;
+        text-align: center;
+    }
+    .hpb-left { padding-right: 0; align-items: center; }
+    .hpb-right { padding-left: 0; }
+    .hpb-book-wrap { width: 110px; }
+    .hpb-desc { font-size: 0.88rem; }
+
+    /* ── DEDICATION ── */
+    .dedication-section { padding: 60px 24px; }
+    .dedication-content p { font-size: clamp(1.4rem, 5.5vw, 2rem); }
+
+    /* ── SECTION 2A: WHY THIS BOOK ── */
+    .s2a-panel {
+        flex-direction: column;
+        min-height: auto;
+        margin: 32px 16px;
+        border-radius: 16px;
+    }
+    .s2a-left {
+        width: 100%;
+        padding: 48px 24px 32px;
+    }
+    .s2a-heading { font-size: 2.4rem; }
+    .s2a-right {
+        width: 100%;
+        padding: 0 24px 48px;
+    }
+    .s2a-dual-cards {
+        height: 320px;
+    }
+    .s2a-card {
+        height: 280px;
+        width: 200px;
+    }
+    .s2a-cta-row { flex-wrap: wrap; gap: 12px; }
+
+    /* ── SECTION 2B: TABLE OF CONTENTS ── */
+    .s2b-panel {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .s2b-left {
+        width: 100%;
+        padding: 48px 24px 32px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .s2b-right {
+        width: 100%;
+        padding: 32px 24px 48px;
+    }
+    .s2b-heading { font-size: 1.8rem; }
+    .s2b-book-wrap { width: 150px; margin-bottom: -40px; }
+    .s2b-chapter-photo-frame { height: 220px; }
+    .s2b-features-section { max-width: 100%; }
+    .s2-stats-strip { gap: 0; padding: 16px 12px; }
+    .s2-stat strong { font-size: 1.2rem; }
+    .s2-stat span { font-size: 0.5rem; }
+
+    /* JOURNEY SECTION */
+    .journey-section {
+        margin: 32px 16px;
+        border-radius: 16px;
+        padding-bottom: 80px;
+    }
+    .journey-section-header { padding: 80px 24px 0; margin-bottom: 48px; }
+    .journey-heading { font-size: clamp(2rem, 7vw, 3rem); }
+
+    /* Stack image on top, text below */
+    .journey-row,
+    .journey-row.row-flip {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .journey-img-half {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 56vw;
+        min-height: 220px;
+        max-height: 300px;
+    }
+    .journey-img {
+        min-height: 220px;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+    }
+    .img-left .journey-img,
+    .img-right .journey-img {
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+    }
+    .journey-text-half {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 32px 24px;
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+    .text-left {
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+    .text-left .j-desc { margin-left: 0 !important; }
+    .j-number { font-size: 3.5rem; }
+    .j-title { font-size: clamp(1.6rem, 5.5vw, 2rem); }
+    .j-desc { font-size: 1rem; }
+
+    /* ── AUTHOR SECTION ── */
+    .author-panel {
+        flex-direction: column;
+        padding: 48px 24px;
+        gap: 36px;
+        align-items: center;
+        text-align: center;
+    }
+    .author-left {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .author-right {
+        width: 100%;
+        text-align: left;
+    }
+    .author-heading { font-size: 2rem; }
+    .author-body { font-size: 1rem; }
+    .flip-gallery-container {
+        width: 220px;
+        height: 334px;
+        margin: 0 auto;
+    }
+
+    /* ── AUTHOR NOTE SECTION ── */
+    .note-container {
+        flex-direction: column;
+        gap: 32px;
+        padding: 0 24px;
+    }
+
+    /* ── REVIEWS SECTION ── */
+    .reviews-section {
+        margin: 32px 16px;
+        border-radius: 16px;
+        padding: 60px 20px 80px;
+    }
+    .reviews-title { font-size: clamp(2rem, 7vw, 3rem); }
+    .reviews-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .review-form-wrapper { padding: 24px 20px; }
+    .review-list-wrapper { max-height: 360px; padding-right: 8px; }
+    .review-filter-row { gap: 6px; }
+    .filter-btn { padding: 5px 12px; font-size: 0.8rem; }
+
+    /* ── READ MORE MODAL ── */
+    .read-modal-content {
+        width: 94%;
+        height: 90vh;
+    }
+    .book-pages-scroll { padding: 36px 24px; }
+
+    /* ── FOOTER ── */
+    .site-footer { padding: 60px 24px 20px; }
+    .footer-top { flex-direction: column; gap: 32px; margin-bottom: 40px; }
+    .footer-col { min-width: unset; }
+    .brand-col { flex: unset; }
+    .footer-name { font-size: 1.6rem; }
+
+    /* ── GALLERY SECTION ── */
+    .gallery-section { padding: 60px 0; }
+}
+
+/* ── SMALL PHONES (≤400px) ── */
+@media (max-width: 400px) {
+    .nav-links { gap: 10px; }
+    .nav-links a { font-size: 0.55rem; }
+    .s2a-heading { font-size: 2rem; }
+    .s2a-card { height: 230px; width: 160px; }
+    .s2a-dual-cards { height: 260px; }
+    .author-heading { font-size: 1.7rem; }
+    .flip-gallery-container { width: 180px; height: 273px; }
 }
