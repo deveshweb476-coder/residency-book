@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Sentry Error Tracking -->
     <script src="https://js.sentry-cdn.com/bundle.min.js" crossorigin="anonymous"></script>
@@ -12,9 +13,9 @@
                     Sentry.browserTracingIntegration(),
                     Sentry.replayIntegration()
                 ],
-                tracesSampleRate: 1.0, 
-                replaysSessionSampleRate: 0.1, 
-                replaysOnErrorSampleRate: 1.0, 
+                tracesSampleRate: 1.0,
+                replaysSessionSampleRate: 0.1,
+                replaysOnErrorSampleRate: 1.0,
             });
         }
     </script>
@@ -23,728 +24,904 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Devesh Bhargude – Redefining Residency Life In Your Own Terms</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <meta name="description" content="Dr. Devesh Bhargude, DM Cardiology and MRCP UK – Author of Redefining Residency Life In Your Own Terms. Available on Amazon.">
+    <meta name="description"
+        content="Dr. Devesh Bhargude, DM Cardiology and MRCP UK – Author of Redefining Residency Life In Your Own Terms. Available on Amazon.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500;1,600&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500;1,600&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=18">
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>`r`n    <script src="main.js?v=18" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>`r`n
+    <script src="main.js?v=18" defer></script>
     <script src="badword-filter-v2.js" defer></script>
 </head>
+
 <body class="light-mode">
 
-<nav class="navbar" id="navbar">
-    <a href="#home" class="nav-logo">Dr. Devesh Bhargude</a>
-    <ul class="nav-links">
-        <li><a href="#book">Book</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#author">Author</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#note">Note</a></li>
-    </ul>
-</nav>
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="nav-logo">Dr. Devesh Bhargude</a>
+        <ul class="nav-links">
+            <li><a href="#book">Book</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#author">Author</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#note">Note</a></li>
+        </ul>
+    </nav>
 
-<!-- ═══════════════════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════════════════
      HERO PANEL 1: Cinematic mosaic — book grid bg + author photo + name
      This is the TOP horizontal band (like John Grisham's mosaic section)
      ═══════════════════════════════════════════════════════════════ -->
-<section class="hero-panel-top" id="home">
+    <section class="hero-panel-top" id="home">
 
-    <!-- Book-cover mosaic grid (fills entire background) -->
-    <div class="hero-mosaic" id="heroMosaic" aria-hidden="true"></div>
+        <!-- Book-cover mosaic grid (fills entire background) -->
+        <div class="hero-mosaic" id="heroMosaic" aria-hidden="true"></div>
 
-    <!-- Layered cinematic overlays -->
-    <div class="hero-ov-dark" aria-hidden="true"></div>
-    <div class="hero-ov-vign" aria-hidden="true"></div>
+        <!-- Layered cinematic overlays -->
+        <div class="hero-ov-dark" aria-hidden="true"></div>
+        <div class="hero-ov-vign" aria-hidden="true"></div>
 
-    <!-- Author photo — right side, blended into mosaic -->
-    <div class="hero-photo-zone" aria-hidden="true">
-        <img src="doctor-image.jpeg" alt="" class="hero-author-photo" id="heroAuthorPhoto">
-    </div>
-
-    <!-- Social icons top right -->
-    <div class="hero-socials-top">
-        <a href="#" class="social-icon" aria-label="Instagram">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="LinkedIn">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v1.765C14.735 9.665 15.8 9 17 9a5 5 0 0 1 5 5zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-    </div>
-
-    <!-- Name + credential block — centered in the mosaic area -->
-    <div class="hero-panel-top-content" id="heroPanelContent">
-        <div class="hero-cred-strip" id="heroCredStrip">
-            <span class="hc-item">DM Cardiology</span>
-            <span class="hc-sep">&middot;</span>
-            <span class="hc-item">MRCP UK</span>
-            <span class="hc-sep">&middot;</span>
-            <span class="hc-item">DNB</span>
-            <span class="hc-sep">&middot;</span>
-            <span class="hc-item">MD</span>
+        <!-- Author photo — right side, blended into mosaic -->
+        <div class="hero-photo-zone" aria-hidden="true">
+            <img src="doctor-image.jpeg" alt="" class="hero-author-photo" id="heroAuthorPhoto">
         </div>
-        <h1 class="hero-name" id="heroName">
-            <span class="hero-name-line1">Dr. Devesh Bhargude</span>
-        </h1>
-        <p class="hero-tagline" id="heroTagline">India&rsquo;s Inspiring Medical Storyteller</p>
-    </div>
 
-</section>
+        <!-- Social icons top right -->
+        <div class="hero-socials-top">
+            <a href="#" class="social-icon" aria-label="Instagram">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v1.765C14.735 9.665 15.8 9 17 9a5 5 0 0 1 5 5zM2 9h4v12H2z" />
+                    <circle cx="4" cy="4" r="2" />
+                </svg>
+            </a>
+        </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
+        <!-- Name + credential block — centered in the mosaic area -->
+        <div class="hero-panel-top-content" id="heroPanelContent">
+            <div class="hero-cred-strip" id="heroCredStrip">
+                <span class="hc-item">DM Cardiology</span>
+                <span class="hc-sep">&middot;</span>
+                <span class="hc-item">MRCP UK</span>
+                <span class="hc-sep">&middot;</span>
+                <span class="hc-item">DNB</span>
+                <span class="hc-sep">&middot;</span>
+                <span class="hc-item">MD</span>
+            </div>
+            <h1 class="hero-name" id="heroName">
+                <span class="hero-name-line1">Dr. Devesh Bhargude</span>
+            </h1>
+            <p class="hero-tagline" id="heroTagline">India&rsquo;s Inspiring Medical Storyteller</p>
+        </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
      HERO PANEL 2: Book announcement band
      This is the BOTTOM horizontal band — separate darker navy bg
      Left: release info + CTA button   |   Right: standing book cover
      ═══════════════════════════════════════════════════════════════ -->
-<section class="hero-panel-bottom" id="heroBookBand">
+    <section class="hero-panel-bottom" id="heroBookBand">
 
-    <!-- LEFT: announcement text -->
-    <div class="hpb-left" id="hpbLeft">
-        <p class="hpb-eyebrow">Now Available on Amazon KDP</p>
-        <h2 class="hpb-title">Redefining Residency Life<br><em>In Your Own Terms</em></h2>
-        <p class="hpb-desc">From shock of MBBS internship to loosing to MD medicine residency and discovering fundamental principles and laws to optimise your residency and redefine it in your own terms</p>
-        <a href="https://www.amazon.in" target="_blank" rel="noopener" class="hpb-btn" id="amazon-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.869-1.234-1.274-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.66 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.891 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.548.582l-3.061-.329c-.259-.057-.548-.266-.472-.661C6.97.996 9.929 0 12.567 0c1.347 0 3.107.359 4.168 1.381 1.347 1.258 1.219 2.938 1.219 4.764v4.314c0 1.297.538 1.867 1.045 2.568.178.25.217.547-.01.733-.566.472-1.571 1.353-2.124 1.845h.279z"/></svg>
-            Order Now &nbsp;&#8964;
-        </a>
-    </div>
-
-    <!-- RIGHT: standing book cover -->
-    <div class="hpb-right" id="hpbRight">
-        <div class="hpb-book-wrap">
-            <img src="book-cover.png" alt="Redefining Residency Life In Your Own Terms" class="hpb-book-img">
-            <!-- Spine depth illusion -->
-            <div class="hpb-book-spine" aria-hidden="true"></div>
-            <!-- Shadow on surface -->
-            <div class="hpb-book-floor-shadow" aria-hidden="true"></div>
+        <!-- LEFT: announcement text -->
+        <div class="hpb-left" id="hpbLeft">
+            <p class="hpb-eyebrow">Now Available on Amazon KDP</p>
+            <h2 class="hpb-title">Redefining Residency Life<br><em>In Your Own Terms</em></h2>
+            <p class="hpb-desc">From shock of MBBS internship to loosing to MD medicine and DM cardiology residency and
+                discovering fundamental principles and laws to optimise your residency and redefine it in your own terms
+            </p>
+            <a href="https://www.amazon.in" target="_blank" rel="noopener" class="hpb-btn" id="amazon-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                        d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.869-1.234-1.274-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.66 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.891 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.548.582l-3.061-.329c-.259-.057-.548-.266-.472-.661C6.97.996 9.929 0 12.567 0c1.347 0 3.107.359 4.168 1.381 1.347 1.258 1.219 2.938 1.219 4.764v4.314c0 1.297.538 1.867 1.045 2.568.178.25.217.547-.01.733-.566.472-1.571 1.353-2.124 1.845h.279z" />
+                </svg>
+                Order Now &nbsp;&#8964;
+            </a>
         </div>
-    </div>
 
-</section><!-- /hero-panel-bottom -->
+        <!-- RIGHT: standing book cover -->
+        <div class="hpb-right" id="hpbRight">
+            <div class="hpb-book-wrap">
+                <img src="book-cover.png" alt="Redefining Residency Life In Your Own Terms" class="hpb-book-img">
+                <!-- Spine depth illusion -->
+                <div class="hpb-book-spine" aria-hidden="true"></div>
+                <!-- Shadow on surface -->
+                <div class="hpb-book-floor-shadow" aria-hidden="true"></div>
+            </div>
+        </div>
 
-<!-- ═ DEDICATION ═ -->
-<section class="dedication-section">
-    <div class="dedication-content">
-        <p>Dedicated to my beloved Parents and Grandparents — <br>whom I owe everything.</p>
-    </div>
-</section>
-<!-- ═══════════════════════════════════════════════════════════════
+    </section><!-- /hero-panel-bottom -->
+
+    <!-- ═ DEDICATION ═ -->
+    <section class="dedication-section">
+        <div class="dedication-content">
+            <p>Dedicated to my beloved Parents and Grandparents — <br>whom I owe everything.</p>
+        </div>
+    </section>
+    <!-- ═══════════════════════════════════════════════════════════════
      SECTION 2 — ABOUT THE BOOK
      Two STACKED horizontal panels (like Imogen Robertson / Grisham reference)
 
      PANEL A (cream/paper): Left = about text + CTA  |  Right = book grid mosaic
      PANEL B (dark navy):   Left = 8 chapter index   |  Right = book page preview
      ═══════════════════════════════════════════════════════════════ -->
-<section id="book">
+    <section id="book">
 
-<!-- ─────────────────────────────────────────────────────────────
+        <!-- ─────────────────────────────────────────────────────────────
      PANEL A — cream background
      Left: about text   |   Right: book cover grid
      ───────────────────────────────────────────────────────────── -->
-<div class="s2a-panel">
+        <div class="s2a-panel">
 
-    <!-- LEFT: About text -->
-    <div class="s2a-left">
-        <p class="s2a-eyebrow">WHY THIS BOOK</p>
-        <h2 class="s2a-heading"><em>Because No One Talks About What Residency Really Costs</em></h2>
-        <p class="s2a-body">
-            Beneath the white coat and the forced smile, the average residency looks nothing like what you signed up for. Sleep deprivation becomes a baseline. Immunity weakens. Anxiety climbs without acknowledgement. The sense of purpose that survived a drop year and cracked NEET — slowly begins to dull at the edges.
-        </p>
-        <p class="s2a-body">
-            The problem is not you. It was never you. It is systemic, widespread, and almost entirely unspoken.
-        </p>
-        <p class="s2a-body">
-            When I began speaking about residency on social media, I was not prepared for what came back. Hundreds of residents wrote in — unburdening themselves to a stranger on a screen because there was, it seemed, nowhere else to put it.
-        </p>
-        <p class="s2a-body">
-            I looked for material written honestly for residents, by someone who had lived it from the inside. I found very little. So I built something of my own.
-        </p>
-        <p class="s2a-body">
-            This book refuses the unspoken agreement that residency is supposed to be hard — and its casualties are supposed to be silent.
-        </p>
-        <p class="s2a-quote">"Why not help people get the best out of something that is quietly taking the worst from them?"<br><span style="font-size: 0.8em; margin-top: 10px; display: block;">— Dr. Devesh Bhargude</span></p>
-        <div class="s2a-cta-row">
-            <button class="s2a-btn-primary btn-open-modal">Read More &rarr;</button>
-        </div>
-    </div>
+            <!-- LEFT: About text -->
+            <div class="s2a-left">
+                <p class="s2a-eyebrow">WHY THIS BOOK</p>
+                <h2 class="s2a-heading"><em>Because No One Talks About What Residency Really Costs</em></h2>
+                <p class="s2a-body">
+                    Beneath the white coat and the forced smile, the average residency looks nothing like what you
+                    signed up for. Sleep deprivation becomes a baseline. Immunity weakens. Anxiety climbs without
+                    acknowledgement. The sense of purpose that survived a drop year and cracked NEET — slowly begins to
+                    dull at the edges.
+                </p>
+                <p class="s2a-body">
+                    The problem is not you. It was never you. It is systemic, widespread, and almost entirely unspoken.
+                </p>
+                <p class="s2a-body">
+                    When I began speaking about residency on social media, I was not prepared for what came back.
+                    Hundreds of residents wrote in — unburdening themselves to a stranger on a screen because there was,
+                    it seemed, nowhere else to put it.
+                </p>
+                <p class="s2a-body">
+                    I looked for material written honestly for residents, by someone who had lived it from the inside. I
+                    found very little. So I built something of my own.
+                </p>
+                <p class="s2a-body">
+                    This book refuses the unspoken agreement that residency is supposed to be hard — and its casualties
+                    are supposed to be silent.
+                </p>
+                <p class="s2a-quote">"Why not help people get the best out of something that is quietly taking the worst
+                    from them?"<br><span style="font-size: 0.8em; margin-top: 10px; display: block;">— Dr. Devesh
+                        Bhargude</span></p>
+                <div class="s2a-cta-row">
+                    <button class="s2a-btn-primary btn-open-modal">Read More &rarr;</button>
+                </div>
+            </div>
 
-    <!-- RIGHT: Dual animated cards -->
-    <div class="s2a-right">
-        <div class="s2a-dual-cards">
-            <img src="section-2-image.jpg" alt="Residency Image" class="s2a-card s2a-card-back">
-            <img src="why thi book page.jpg" alt="Graduation" class="s2a-card s2a-card-front">
-        </div>
-    </div>
+            <!-- RIGHT: Dual animated cards -->
+            <div class="s2a-right">
+                <div class="s2a-dual-cards">
+                    <img src="section-2-image.jpg" alt="Residency Image" class="s2a-card s2a-card-back">
+                    <img src="why thi book page.jpg" alt="Graduation" class="s2a-card s2a-card-front">
+                </div>
+            </div>
 
-</div><!-- /s2a-panel -->
+        </div><!-- /s2a-panel -->
 
-<!-- ─────────────────────────────────────────────────────────────
+        <!-- ─────────────────────────────────────────────────────────────
      PANEL B — dark navy background
      Left: 8-chapter interactive index   |   Right: book page preview
      ───────────────────────────────────────────────────────────── -->
-<div class="s2b-panel">
+        <div class="s2b-panel">
 
-    <!-- LEFT: Full chapter index (all 8 entries, numbered) -->
-    <div class="s2b-left">
-        <p class="s2b-eyebrow">Inside the Book</p>
-        <h3 class="s2b-heading">Table of Contents</h3>
+            <!-- LEFT: Full chapter index (all 8 entries, numbered) -->
+            <div class="s2b-left">
+                <p class="s2b-eyebrow">Inside the Book</p>
+                <h3 class="s2b-heading">Table of Contents</h3>
 
-        <ul class="s2b-index" id="s2bIndex">
-            <li class="s2b-item active" data-ch="0">
-                <span class="s2b-num">01</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Introduction</span>
-                    <span class="s2b-subtitle">The First Brutal 36-Hour Shift</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="1">
-                <span class="s2b-num">02</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Fitness</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="2">
-                <span class="s2b-num">03</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Nutrition</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="3">
-                <span class="s2b-num">04</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Mindset</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="4">
-                <span class="s2b-num">05</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Finances</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="5">
-                <span class="s2b-num">06</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Relationships & Social Wealth</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="6">
-                <span class="s2b-num">07</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Clinical Efficiency</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="7">
-                <span class="s2b-num">08</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Mental Health</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="8">
-                <span class="s2b-num">09</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Depersonalization</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="9">
-                <span class="s2b-num">10</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Building CV</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="10">
-                <span class="s2b-num">11</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Sex Transmutation</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="11">
-                <span class="s2b-num">12</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">What to Expect from Residency?</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="12">
-                <span class="s2b-num">13</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">The Only Good Habits That Matter</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-            <li class="s2b-item" data-ch="13">
-                <span class="s2b-num">14</span>
-                <div class="s2b-item-body">
-                    <span class="s2b-title">Finale</span>
-                </div>
-                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </li>
-        </ul>
+                <ul class="s2b-index" id="s2bIndex">
+                    <li class="s2b-item active" data-ch="0">
+                        <span class="s2b-num">01</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Introduction</span>
+                            <span class="s2b-subtitle">The First Brutal 36-Hour Shift</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="1">
+                        <span class="s2b-num">02</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Fitness</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="2">
+                        <span class="s2b-num">03</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Nutrition</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="3">
+                        <span class="s2b-num">04</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Mindset</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="4">
+                        <span class="s2b-num">05</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Finances</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="5">
+                        <span class="s2b-num">06</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Relationships & Social Wealth</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="6">
+                        <span class="s2b-num">07</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Clinical Efficiency</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="7">
+                        <span class="s2b-num">08</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Mental Health</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="8">
+                        <span class="s2b-num">09</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Depersonalization</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="9">
+                        <span class="s2b-num">10</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Building CV</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="10">
+                        <span class="s2b-num">11</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Sex Transmutation</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="11">
+                        <span class="s2b-num">12</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">What to Expect from Residency?</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="12">
+                        <span class="s2b-num">13</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">The Only Good Habits That Matter</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="s2b-item" data-ch="13">
+                        <span class="s2b-num">14</span>
+                        <div class="s2b-item-body">
+                            <span class="s2b-title">Finale</span>
+                        </div>
+                        <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                </ul>
 
-        <div class="s2b-cta-row">
-            <a href="https://www.amazon.in" target="_blank" rel="noopener" class="s2b-btn-amazon">Buy now from Amazon</a>
-            <button class="s2b-btn-ghost" id="btn-explore-book2">Find out more</button>
-        </div>
-    </div>
-
-    <!-- RIGHT: Book page preview — changes on chapter hover -->
-    <div class="s2b-right">
-        <!-- Glow -->
-        <div class="s2b-glow" aria-hidden="true"></div>
-
-        <!-- Book display: cover on top, chapter preview card below -->
-        <div class="s2b-book-display">
-
-            <!-- Chapter preview card container for GSAP flying effect -->
-            <div class="s2b-card-container" id="s2bCardContainer">
-                
-                <!-- Sizing dummy card (keeps container height) -->
-                <div class="s2b-chapter-card" style="visibility: hidden; position: relative;">
-                    <div class="s2b-chapter-photo-frame">
-                        <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=800&q=80" alt="Chapter Image" class="s2b-chapter-img">
-                    </div>
-                    <button class="s2b-btn-ghost btn-open-modal" style="margin-top: 20px;">Find Out More</button>
+                <div class="s2b-cta-row">
+                    <a href="https://www.amazon.in" target="_blank" rel="noopener" class="s2b-btn-amazon">Buy now from
+                        Amazon</a>
+                    <button class="s2b-btn-ghost" id="btn-explore-book2">Find out more</button>
                 </div>
-
-                <!-- Initial active card -->
-                <div class="s2b-chapter-card temp-card active-card" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                    <div class="s2b-chapter-photo-frame">
-                        <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=800&q=80" alt="Chapter Image" class="s2b-chapter-img">
-                    </div>
-                    <button class="s2a-btn-primary btn-open-modal" style="margin-top: 25px;">Find Out More</button>
-                </div>
-
             </div>
 
-        </div>
+            <!-- RIGHT: Book page preview — changes on chapter hover -->
+            <div class="s2b-right">
+                <!-- Glow -->
+                <div class="s2b-glow" aria-hidden="true"></div>
 
-        <!-- Availability pill -->
-        <div class="s2b-avail">
-            <span class="s2b-avail-dot"></span>
-            Now Available on Amazon KDP
-        </div>
+                <!-- Book display: cover on top, chapter preview card below -->
+                <div class="s2b-book-display">
 
-        <!-- Every Chapter Section -->
-        <div class="s2b-features-section">
-            <h4 class="s2b-features-title">Every Chapter Is Built For You</h4>
-            <ul class="s2b-features-list">
-                <li class="s2b-feature-item">
-                    <div class="s2b-feature-icon">📖</div>
-                    <div class="s2b-feature-text">
-                        <span class="s2b-feature-head">Title</span>
-                        <span class="s2b-feature-desc">Sets the stage for what's ahead</span>
+                    <!-- Chapter preview card container for GSAP flying effect -->
+                    <div class="s2b-card-container" id="s2bCardContainer">
+
+                        <!-- Sizing dummy card (keeps container height) -->
+                        <div class="s2b-chapter-card" style="visibility: hidden; position: relative;">
+                            <div class="s2b-chapter-photo-frame">
+                                <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=800&q=80"
+                                    alt="Chapter Image" class="s2b-chapter-img">
+                            </div>
+                            <button class="s2b-btn-ghost btn-open-modal" style="margin-top: 20px;">Find Out
+                                More</button>
+                        </div>
+
+                        <!-- Initial active card -->
+                        <div class="s2b-chapter-card temp-card active-card"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <div class="s2b-chapter-photo-frame">
+                                <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=800&q=80"
+                                    alt="Chapter Image" class="s2b-chapter-img">
+                            </div>
+                            <button class="s2a-btn-primary btn-open-modal" style="margin-top: 25px;">Find Out
+                                More</button>
+                        </div>
+
                     </div>
-                </li>
-                <li class="s2b-feature-item">
-                    <div class="s2b-feature-icon">🏥</div>
-                    <div class="s2b-feature-text">
-                        <span class="s2b-feature-head">Patient &amp; Colleague Stories</span>
-                        <span class="s2b-feature-desc">Real cases, real people, real situations</span>
-                    </div>
-                </li>
-                <li class="s2b-feature-item">
-                    <div class="s2b-feature-icon">🔄</div>
-                    <div class="s2b-feature-text">
-                        <span class="s2b-feature-head">My Story</span>
-                        <span class="s2b-feature-desc">Mistakes, lessons and transformation — lived from the inside</span>
-                    </div>
-                </li>
-                <li class="s2b-feature-item">
-                    <div class="s2b-feature-icon">⚙️</div>
-                    <div class="s2b-feature-text">
-                        <span class="s2b-feature-head">The Process</span>
-                        <span class="s2b-feature-desc">The actionable part that will help you the most</span>
-                    </div>
-                </li>
-                <li class="s2b-feature-item">
-                    <div class="s2b-feature-icon">💡</div>
-                    <div class="s2b-feature-text">
-                        <span class="s2b-feature-head">Things I Know at 30, I Wish I Knew at 24</span>
-                        <span class="s2b-feature-desc">Hard-earned wisdom, delivered straight</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
 
-</div><!-- /s2b-panel -->
-
-
-</section><!-- /book -->
-
-<!-- ═══ EXPLORE FULLY MODAL ═══ -->
-<div class="read-modal" id="read-modal">
-    <button class="btn-close-modal" id="btn-close-modal" aria-label="Close modal">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-    </button>
-    
-    <div class="read-modal-content">
-        <div class="book-pages-scroll">
-            <h2 class="book-modal-title">Why This Book Exists?</h2>
-            <div class="book-text-body">
-                <p>The idea was simple, and it arrived the way most honest ideas do — not in a moment of inspiration, but in a moment of recognition.</p>
-                <p>I thought: why not share this journey with others? Why not help people get the best out of something that is quietly taking the worst from them?</p>
-                <p>When I began speaking about residency on social media, I was not prepared for what came back. Hundreds of messages. Residents from across the country, writing in with a candour they clearly could not afford in their wards or their departments — unburdening themselves to a stranger on a screen because there was, it seemed, nowhere else to put it. The volume was not surprising as much as it was clarifying. The problem was not isolated. It was not a matter of individual weakness or poor adjustment. It was systemic, widespread, and almost entirely unspoken.</p>
-                <p>I looked for material that addressed it honestly. Something written for residents, about residents, by someone who had lived it from the inside. I found very little. So I spoke to people. I listened carefully. And eventually, I built something of my own.</p>
-                <br>
-                <p><strong>Because here is what the average residency actually looks like, beneath the white coat and the forced smile.</strong></p>
-                <p>The body takes the first blow. Sleep deprivation becomes a baseline state rather than an exception. Immunity weakens quietly and persistently. Nearly seventy percent of residents report musculoskeletal pain. Weight is lost — the wrong kind — and then regained, also the wrong kind. Meals are incidental. Rest is rationed.</p>
-                <p>Then the mind follows.</p>
-                <p>Anxiety climbs without acknowledgement or outlet. The sense of reward — that fundamental human need to feel that effort means something — slowly erodes. Polysubstance abuse enters, often gradually, often socially, and then less so. Sleep architecture fractures. Emotional balance, once taken for granted, becomes difficult to locate. Some residents begin self-medicating — anxiolytics, antidepressants, painkillers — not out of recklessness but out of a quiet, desperate attempt to continue functioning.</p>
-                <p>The sense of purpose, which once felt iron-strong — strong enough to survive a drop year, strong enough to crack NEET — begins to dull at the edges. The future, which once seemed like something being actively built, starts to feel abstract, distant, and increasingly difficult to plan for.</p>
-                <p>Relationships fracture. Infidelity is more common than anyone discusses. Depersonalisation sets in — that strange, unsettling sensation of watching your own life from a slight distance, of going through the motions of caring without being able to fully feel the act of it. The academic spark — that original hunger that brought most of us here — dims. Not dramatically, not all at once, but steadily, in the way that neglected fires do.</p>
-                <p>And this, I want to be clear, is only what surfaces.</p>
-                <p>The rest stays buried. Pressed down beneath clinical responsibility and professional obligation and the unspoken agreement that residency is supposed to be hard and therefore its casualties are supposed to be silent.</p>
-                <p>This book refuses that agreement.</p>
-                <br><br><br><br>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ═══ AUTHOR MODAL ═══ -->
-<div class="read-modal" id="author-modal">
-    <button class="btn-close-modal" aria-label="Close modal">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-    </button>
-    
-    <div class="read-modal-content">
-        <div class="book-pages-scroll">
-            <h2 class="book-modal-title">ABOUT THE AUTHOR</h2>
-            <div class="book-text-body">
-                <p>Hello everyone, I am Dr. Devesh Bhargude. I assume you already know me at least partially but I'd love to be as honest as possible with you. At the time of writing this book I'm in my final year of cardiology residency and the last semester. I truly love cardiology and have an inherent interest to learn and grow and the same interest spans across multiple spectrums of my life. As I navigated through the journey of residency I built my fitness to the fittest possible realm of life where I can run half marathons, lift 200 kg for deadlift, 20kgs of muscle ups, 1000 pushups in an hour, 500 pull ups at 4.00 am and so on. I enjoy the vitality it provides and has truly become my identity. I do have miles to go and this isn't something to glorify about, because I believe everyone should do it. I became seriously disciplined with nutrition and supplementation and I preach about the same over Instagram platform where I hope to provide as much knowledge as possible in the most scientific manner.</p>
-                <p>I am an academic nerd, Being in Top all India ranks and having won few academic quizzes and publish few articles, which I wish to do more often. I have presented in more than 10+ conferences and completed my MRCP UK during first year of residency where I would be doing 36 hours shifts almost 10 times a month, something that was unimaginable to me when I first heard it.</p>
-                <p>Here's the fact, these are all external endeavors but the real growth I believe is more mental and spiritual. I love reading and happen to read 60+ books in last 2 years. I meditate for 20 minutes almost every day and I train martial arts (I train staff training) the first thing in the morning (nobody actually knows this, that's something personal for me). I travelled almost every month and built even deeper relationship with my family who are my strongest supporters. I love them with all my heart and they are my strongest motivators. Coming from a small town of a population of merely 2000+ to becoming the current version of me, and realizing that I am on a path to become the version of me that I always wanted to become.</p>
-                <p>I am fully grateful for this chance at life and to be able to provide genuine value to you and my patients. I guess the whole journey of residency which is portrayed initially and conventionally to us is incomplete and partially flawed, you can and you must become the idealistic version of you and get the best experience of life from these 3 years so that you put yourself on the path to become the idealistic version of that you've dreamt of and finding your purpose and dharma which is truly yours to begin with and end with. That's the true journey and that's the opportunity that residency provides. It toughens your soul, bones and neuroplastic brain and shapes it with pragmatic abundant dimensions.</p>
-                <p>So, let's end it. The book has all the essential components which are truly basic but are ignored quite literally and taken for granted very easily. I've infused my journey along to make it look more ethereal and such that you can relate on various parameters too.</p>
-                <br><br><br><br>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- ═══ SECTION 3: AUTHOR JOURNEY ═══ -->
-<section id="journey" class="journey-section">
-
-    <div class="journey-section-header">
-        <p class="journey-eyebrow">A Cardiologist's Journey</p>
-        <h2 class="journey-heading">The Road to <em>Mastery</em></h2>
-    </div>
-
-    <!-- Row 1: IMAGE LEFT, TEXT RIGHT -->
-    <div class="journey-row">
-        <div class="journey-img-half img-left">
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Early MBBS days" class="journey-img" data-scroll-fade>
-        </div>
-        <div class="journey-text-half text-right" data-scroll-fade>
-            <span class="j-number">01</span>
-            <h3 class="j-title">The Early <em>Days of MBBS</em></h3>
-            <p class="j-desc">The transition from a fresh graduate to a resident is a shock. This is where the realization hits — textbook knowledge is only the beginning of true medicine.</p>
-        </div>
-    </div>
-
-    <!-- Row 2: TEXT LEFT, IMAGE RIGHT -->
-    <div class="journey-row row-flip">
-        <div class="journey-text-half text-left" data-scroll-fade>
-            <span class="j-number">02</span>
-            <h3 class="j-title">The <em>residency Grind</em></h3>
-            <p class="j-desc">Surviving brutal 36-hour shifts, making life-or-death decisions in the dead of night, and learning the true meaning of resilience under pressure.<br><br>Slowly losing the identity of being an individual to succumbing to the residency</p>
-        </div>
-        <div class="journey-img-half img-right">
-            <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Residency Grind" class="journey-img" data-scroll-fade>
-        </div>
-    </div>
-
-    <!-- Row 3: IMAGE LEFT, TEXT RIGHT -->
-    <div class="journey-row">
-        <div class="journey-img-half img-left">
-            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Identity" class="journey-img" data-scroll-fade>
-        </div>
-        <div class="journey-text-half text-right" data-scroll-fade>
-            <span class="j-number">03</span>
-            <h3 class="j-title">Conjuring the <em>Identity</em></h3>
-            <p class="j-desc">Understanding multiple dimensions of your life and optimising each aspect along with residency. Building overall character which brings you closer to your dreams not just as a trained resident but a wholesome human being</p>
-        </div>
-    </div>
-
-    <!-- Row 4: TEXT LEFT, IMAGE RIGHT -->
-    <div class="journey-row row-flip">
-        <div class="journey-text-half text-left" data-scroll-fade>
-            <span class="j-number">04</span>
-            <h3 class="j-title"><em>Finale</em></h3>
-            <p class="j-desc">You are God’s best creation, your DNA is a unique combination never to reoccur. Your purpose is higher, your responsibilities are higher, your duty is an emblem to its nobility. You need to honour that creation and show God the beauty of his creation, holistically.</p>
-        </div>
-        <div class="journey-img-half img-right">
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Finale" class="journey-img" data-scroll-fade>
-        </div>
-    </div>
-
-</section>
-
-<!-- ═ SECTION 4: ABOUT THE AUTHOR ═ -->
-<section id="author" class="author-panel">
-    
-    <!-- LEFT: Flip Gallery -->
-    <div class="author-left">
-        <div id="author-flip-gallery" class="flip-gallery-container">
-            <div class="unite top"></div>
-            <div class="unite bottom"></div>
-            <div class="unite overlay-top"></div>
-            <div class="unite overlay-bottom"></div>
-        </div>
-        <div class="s2a-cta-row" style="margin-top: 30px; text-align: center; width: 100%;">
-            <button class="s2a-btn-primary btn-open-modal" data-target="#author-modal" style="margin: 0 auto; display: inline-block;">Read More &rarr;</button>
-        </div>
-    </div>
-
-    <!-- RIGHT: About the Author text -->
-    <div class="author-right">
-        <p class="author-eyebrow">ABOUT THE AUTHOR</p>
-        <h2 class="author-heading">Dr. Devesh Bhargude<br><em>DM Cardiology · MRCP UK · DNB · MD</em></h2>
-        
-        <p class="author-body">
-            I am a cardiologist in my final year of residency — and probably one of the most unconventional doctors you will meet. Coming from a small town of barely 2000 people, I built myself into someone who runs half marathons, deadlifts 200kg, reads 60+ books a year, trains martial arts at 4 AM, and still shows up for 36-hour ICU shifts.
-        </p>
-        <p class="author-body">
-            I hold Top All India ranks, have presented at 10+ conferences, completed MRCP UK during residency, and actively share evidence-based knowledge on nutrition, fitness, and medicine on Instagram.
-        </p>
-        <p class="author-body" style="margin-bottom: 30px;">
-            But beyond the credentials — I meditate in the woods, nurture deep family bonds, and believe the real growth of residency is mental and spiritual, not just clinical.
-        </p>
-        <blockquote class="author-body" style="margin-bottom: 0;">
-            "Coming from a small town of 2000 people to becoming the version of me I always wanted to be — that is the real story residency made possible."<br>
-            <span class="quote-author">— Dr. Devesh Bhargude</span>
-        </blockquote>
-    </div>
-
-</section>
-
-
-<!-- ═ SECTION 5: LIVE FEEDBACK ═ -->
-<section id="reviews" class="reviews-section">
-    <div class="reviews-header">
-        <h2 class="reviews-title">Reader <em>Reflections</em></h2>
-        <p class="reviews-subtitle">Share your thoughts on the journey.</p>
-    </div>
-    
-    <div class="reviews-container">
-        <!-- Review Form -->
-        <div class="review-form-wrapper">
-            <form id="feedback-form" class="feedback-form">
-                <div class="form-group">
-                    <label for="fb-name">Your Name</label>
-                    <input type="text" id="fb-name" required placeholder="Dr. John Doe">
                 </div>
 
-                <div class="form-group">
-                    <label for="fb-text">Your Feedback</label>
-                    <textarea id="fb-text" rows="4" required placeholder="How did this book resonate with your experience?"></textarea>
+                <!-- Availability pill -->
+                <div class="s2b-avail">
+                    <span class="s2b-avail-dot"></span>
+                    Now Available on Amazon KDP
                 </div>
-                <button type="submit" class="btn-submit">Post Feedback</button>
-                <div id="bad-word-error" style="display:none; color:#e53e3e; background:#fff5f5; border:1px solid #feb2b2; padding:10px 14px; border-radius:6px; margin-top:8px; font-size:14px;"></div>
-            </form>
-        </div>
-        
-        <!-- Review List -->
-        <div class="review-list-wrapper">
-            <div class="review-list" id="review-list">
-                
+
+                <!-- Every Chapter Section -->
+                <div class="s2b-features-section">
+                    <h4 class="s2b-features-title">Every Chapter Is Built For You</h4>
+                    <ul class="s2b-features-list">
+                        <li class="s2b-feature-item">
+                            <div class="s2b-feature-icon">📖</div>
+                            <div class="s2b-feature-text">
+                                <span class="s2b-feature-head">Title</span>
+                                <span class="s2b-feature-desc">Sets the stage for what's ahead</span>
+                            </div>
+                        </li>
+                        <li class="s2b-feature-item">
+                            <div class="s2b-feature-icon">🏥</div>
+                            <div class="s2b-feature-text">
+                                <span class="s2b-feature-head">Patient &amp; Colleague Stories</span>
+                                <span class="s2b-feature-desc">Real cases, real people, real situations</span>
+                            </div>
+                        </li>
+                        <li class="s2b-feature-item">
+                            <div class="s2b-feature-icon">🔄</div>
+                            <div class="s2b-feature-text">
+                                <span class="s2b-feature-head">My Story</span>
+                                <span class="s2b-feature-desc">Mistakes, lessons and transformation — lived from the
+                                    inside</span>
+                            </div>
+                        </li>
+                        <li class="s2b-feature-item">
+                            <div class="s2b-feature-icon">⚙️</div>
+                            <div class="s2b-feature-text">
+                                <span class="s2b-feature-head">The Process</span>
+                                <span class="s2b-feature-desc">The actionable part that will help you the most</span>
+                            </div>
+                        </li>
+                        <li class="s2b-feature-item">
+                            <div class="s2b-feature-icon">💡</div>
+                            <div class="s2b-feature-text">
+                                <span class="s2b-feature-head">Things I Know at 30, I Wish I Knew at 24</span>
+                                <span class="s2b-feature-desc">Hard-earned wisdom, delivered straight</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div><!-- /s2b-panel -->
+
+
+    </section><!-- /book -->
+
+    <!-- ═══ EXPLORE FULLY MODAL ═══ -->
+    <div class="read-modal" id="read-modal">
+        <button class="btn-close-modal" id="btn-close-modal" aria-label="Close modal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="read-modal-content">
+            <div class="book-pages-scroll">
+                <h2 class="book-modal-title">Why This Book Exists?</h2>
+                <div class="book-text-body">
+                    <p>The idea was simple, and it arrived the way most honest ideas do — not in a moment of
+                        inspiration, but in a moment of recognition.</p>
+                    <p>I thought: why not share this journey with others? Why not help people get the best out of
+                        something that is quietly taking the worst from them?</p>
+                    <p>When I began speaking about residency on social media, I was not prepared for what came back.
+                        Hundreds of messages. Residents from across the country, writing in with a candour they clearly
+                        could not afford in their wards or their departments — unburdening themselves to a stranger on a
+                        screen because there was, it seemed, nowhere else to put it. The volume was not surprising as
+                        much as it was clarifying. The problem was not isolated. It was not a matter of individual
+                        weakness or poor adjustment. It was systemic, widespread, and almost entirely unspoken.</p>
+                    <p>I looked for material that addressed it honestly. Something written for residents, about
+                        residents, by someone who had lived it from the inside. I found very little. So I spoke to
+                        people. I listened carefully. And eventually, I built something of my own.</p>
+                    <br>
+                    <p><strong>Because here is what the average residency actually looks like, beneath the white coat
+                            and the forced smile.</strong></p>
+                    <p>The body takes the first blow. Sleep deprivation becomes a baseline state rather than an
+                        exception. Immunity weakens quietly and persistently. Nearly seventy percent of residents report
+                        musculoskeletal pain. Weight is lost — the wrong kind — and then regained, also the wrong kind.
+                        Meals are incidental. Rest is rationed.</p>
+                    <p>Then the mind follows.</p>
+                    <p>Anxiety climbs without acknowledgement or outlet. The sense of reward — that fundamental human
+                        need to feel that effort means something — slowly erodes. Polysubstance abuse enters, often
+                        gradually, often socially, and then less so. Sleep architecture fractures. Emotional balance,
+                        once taken for granted, becomes difficult to locate. Some residents begin self-medicating —
+                        anxiolytics, antidepressants, painkillers — not out of recklessness but out of a quiet,
+                        desperate attempt to continue functioning.</p>
+                    <p>The sense of purpose, which once felt iron-strong — strong enough to survive a drop year, strong
+                        enough to crack NEET — begins to dull at the edges. The future, which once seemed like something
+                        being actively built, starts to feel abstract, distant, and increasingly difficult to plan for.
+                    </p>
+                    <p>Relationships fracture. Infidelity is more common than anyone discusses. Depersonalisation sets
+                        in — that strange, unsettling sensation of watching your own life from a slight distance, of
+                        going through the motions of caring without being able to fully feel the act of it. The academic
+                        spark — that original hunger that brought most of us here — dims. Not dramatically, not all at
+                        once, but steadily, in the way that neglected fires do.</p>
+                    <p>And this, I want to be clear, is only what surfaces.</p>
+                    <p>The rest stays buried. Pressed down beneath clinical responsibility and professional obligation
+                        and the unspoken agreement that residency is supposed to be hard and therefore its casualties
+                        are supposed to be silent.</p>
+                    <p>This book refuses that agreement.</p>
+                    <br><br><br><br>
+                </div>
             </div>
         </div>
     </div>
-</section>
 
-<!-- ═ AUTHOR NOTE ═ -->
-<section id="note" class="author-note-section">
-    <div class="note-container">
-        <div class="note-content">
-            <p class="note-eyebrow">A NOTE FROM THE AUTHOR</p>
-            <h2 class="note-title">Thank You For<br>Choosing To Transform<br><em>Your Residency</em></h2>
-            
-            <div class="note-body">
-                <p>This book is my sincere and honest effort to highlight the most pragmatic, basic, and easily ignored aspects of life during residency. Having done two heavy residencies, I understood how much life exists outside the white coat — and how deeply it impacts your whole being.</p>
-                
-                <p>When I raised my voice on social media about NEET, residency toxicity, and work ethics — messages flooded in every day. Every struggle was different, yet the fundamentals were the same.</p>
-                
-                <p>This book carries 6 years of wisdom, insights from 20+ successful doctors, and my own story — infused together so you can use it as a personal guide alongside your study books.</p>
-                
-                <p>I hope it brings you clarity, grounds you in basics, and disciplines you toward the ideal version of you.</p>
-                
-                <p><strong>Let's go!!</strong></p>
+    <!-- ═══ AUTHOR MODAL ═══ -->
+    <div class="read-modal" id="author-modal">
+        <button class="btn-close-modal" aria-label="Close modal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="read-modal-content">
+            <div class="book-pages-scroll">
+                <h2 class="book-modal-title">ABOUT THE AUTHOR</h2>
+                <div class="book-text-body">
+                    <p>Hello everyone, I am Dr. Devesh Bhargude. I assume you already know me at least partially but I'd
+                        love to be as honest as possible with you. At the time of writing this book I'm in my final year
+                        of cardiology residency and the last semester. I truly love cardiology and have an inherent
+                        interest to learn and grow and the same interest spans across multiple spectrums of my life. As
+                        I navigated through the journey of residency I built my fitness to the fittest possible realm of
+                        life where I can run half marathons, lift 200 kg for deadlift, 20kgs of muscle ups, 1000 pushups
+                        in an hour, 500 pull ups at 4.00 am and so on. I enjoy the vitality it provides and has truly
+                        become my identity. I do have miles to go and this isn't something to glorify about, because I
+                        believe everyone should do it. I became seriously disciplined with nutrition and supplementation
+                        and I preach about the same over Instagram platform where I hope to provide as much knowledge as
+                        possible in the most scientific manner.</p>
+                    <p>I am an academic nerd, Being in Top all India ranks and having won few academic quizzes and
+                        publish few articles, which I wish to do more often. I have presented in more than 10+
+                        conferences and completed my MRCP UK during first year of residency where I would be doing 36
+                        hours shifts almost 10 times a month, something that was unimaginable to me when I first heard
+                        it.</p>
+                    <p>Here's the fact, these are all external endeavors but the real growth I believe is more mental
+                        and spiritual. I love reading and happen to read 60+ books in last 2 years. I meditate for 20
+                        minutes almost every day and I train martial arts (I train staff training) the first thing in
+                        the morning (nobody actually knows this, that's something personal for me). I travelled almost
+                        every month and built even deeper relationship with my family who are my strongest supporters. I
+                        love them with all my heart and they are my strongest motivators. Coming from a small town of a
+                        population of merely 2000+ to becoming the current version of me, and realizing that I am on a
+                        path to become the version of me that I always wanted to become.</p>
+                    <p>I am fully grateful for this chance at life and to be able to provide genuine value to you and my
+                        patients. I guess the whole journey of residency which is portrayed initially and conventionally
+                        to us is incomplete and partially flawed, you can and you must become the idealistic version of
+                        you and get the best experience of life from these 3 years so that you put yourself on the path
+                        to become the idealistic version of that you've dreamt of and finding your purpose and dharma
+                        which is truly yours to begin with and end with. That's the true journey and that's the
+                        opportunity that residency provides. It toughens your soul, bones and neuroplastic brain and
+                        shapes it with pragmatic abundant dimensions.</p>
+                    <p>So, let's end it. The book has all the essential components which are truly basic but are ignored
+                        quite literally and taken for granted very easily. I've infused my journey along to make it look
+                        more ethereal and such that you can relate on various parameters too.</p>
+                    <br><br><br><br>
+                </div>
             </div>
+        </div>
+    </div>
 
-            <blockquote class="note-quote">
-                "You have a right to perform your prescribed duties, but never be attached to the fruits of your actions."
-                <footer>— Bhagavad Gita 2.47</footer>
+
+
+    <!-- ═══ SECTION 3: AUTHOR JOURNEY ═══ -->
+    <section id="journey" class="journey-section">
+
+        <div class="journey-section-header">
+            <p class="journey-eyebrow">A Cardiologist's Journey</p>
+            <h2 class="journey-heading">The Road to <em>Mastery</em></h2>
+        </div>
+
+        <!-- Row 1: IMAGE LEFT, TEXT RIGHT -->
+        <div class="journey-row">
+            <div class="journey-img-half img-left">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85"
+                    alt="Early MBBS days" class="journey-img" data-scroll-fade>
+            </div>
+            <div class="journey-text-half text-right" data-scroll-fade>
+                <span class="j-number">01</span>
+                <h3 class="j-title">The Early <em>Days of MBBS</em></h3>
+                <p class="j-desc">The transition from a fresh graduate to a resident is a shock. This is where the
+                    realization hits — textbook knowledge is only the beginning of true medicine.</p>
+            </div>
+        </div>
+
+        <!-- Row 2: TEXT LEFT, IMAGE RIGHT -->
+        <div class="journey-row row-flip">
+            <div class="journey-text-half text-left" data-scroll-fade>
+                <span class="j-number">02</span>
+                <h3 class="j-title">The <em>residency Grind</em></h3>
+                <p class="j-desc">Surviving brutal 36-hour shifts, making life-or-death decisions in the dead of night,
+                    and learning the true meaning of resilience under pressure.<br><br>Slowly losing the identity of
+                    being an individual to succumbing to the residency</p>
+            </div>
+            <div class="journey-img-half img-right">
+                <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85"
+                    alt="Residency Grind" class="journey-img" data-scroll-fade>
+            </div>
+        </div>
+
+        <!-- Row 3: IMAGE LEFT, TEXT RIGHT -->
+        <div class="journey-row">
+            <div class="journey-img-half img-left">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85"
+                    alt="Identity" class="journey-img" data-scroll-fade>
+            </div>
+            <div class="journey-text-half text-right" data-scroll-fade>
+                <span class="j-number">03</span>
+                <h3 class="j-title">Conjuring the <em>Identity</em></h3>
+                <p class="j-desc">Understanding multiple dimensions of your life and optimising each aspect along with
+                    residency. Building overall character which brings you closer to your dreams not just as a trained
+                    resident but a wholesome human being</p>
+            </div>
+        </div>
+
+        <!-- Row 4: TEXT LEFT, IMAGE RIGHT -->
+        <div class="journey-row row-flip">
+            <div class="journey-text-half text-left" data-scroll-fade>
+                <span class="j-number">04</span>
+                <h3 class="j-title"><em>Finale</em></h3>
+                <p class="j-desc">You are God’s best creation, your DNA is a unique combination never to reoccur. Your
+                    purpose is higher, your responsibilities are higher, your duty is an emblem to its nobility. You
+                    need to honour that creation and show God the beauty of his creation, holistically.</p>
+            </div>
+            <div class="journey-img-half img-right">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85"
+                    alt="Finale" class="journey-img" data-scroll-fade>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ═ SECTION 4: ABOUT THE AUTHOR ═ -->
+    <section id="author" class="author-panel">
+
+        <!-- LEFT: Flip Gallery -->
+        <div class="author-left">
+            <div id="author-flip-gallery" class="flip-gallery-container">
+                <div class="unite top"></div>
+                <div class="unite bottom"></div>
+                <div class="unite overlay-top"></div>
+                <div class="unite overlay-bottom"></div>
+            </div>
+            <div class="s2a-cta-row" style="margin-top: 30px; text-align: center; width: 100%;">
+                <button class="s2a-btn-primary btn-open-modal" data-target="#author-modal"
+                    style="margin: 0 auto; display: inline-block;">Read More &rarr;</button>
+            </div>
+        </div>
+
+        <!-- RIGHT: About the Author text -->
+        <div class="author-right">
+            <p class="author-eyebrow">ABOUT THE AUTHOR</p>
+            <h2 class="author-heading">Dr. Devesh Bhargude<br><em>DM Cardiology · MRCP UK · DNB · MD</em></h2>
+
+            <p class="author-body">
+                I am a cardiologist in my final year of residency — and probably one of the most unconventional doctors
+                you will meet. Coming from a small town of barely 2000 people, I built myself into someone who runs half
+                marathons, deadlifts 200kg, reads 60+ books a year, trains martial arts at 4 AM, and still shows up for
+                36-hour ICU shifts.
+            </p>
+            <p class="author-body">
+                I hold Top All India ranks, have presented at 10+ conferences, completed MRCP UK during residency, and
+                actively share evidence-based knowledge on nutrition, fitness, and medicine on Instagram.
+            </p>
+            <p class="author-body" style="margin-bottom: 30px;">
+                But beyond the credentials — I meditate in the woods, nurture deep family bonds, and believe the real
+                growth of residency is mental and spiritual, not just clinical.
+            </p>
+            <blockquote class="author-body" style="margin-bottom: 0;">
+                "Coming from a small town of 2000 people to becoming the version of me I always wanted to be — that is
+                the real story residency made possible."<br>
+                <span class="quote-author">— Dr. Devesh Bhargude</span>
             </blockquote>
         </div>
-        <div class="note-image">
-            <div class="note-photo-frame">
-                <!-- Placeholder for image later -->
-                <img src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?w=800&q=80" alt="Author Note Photo" class="note-img">
+
+    </section>
+
+
+    <!-- ═ SECTION 5: LIVE FEEDBACK ═ -->
+    <section id="reviews" class="reviews-section">
+        <div class="reviews-header">
+            <h2 class="reviews-title">Reader <em>Reflections</em></h2>
+            <p class="reviews-subtitle">Share your thoughts on the journey.</p>
+        </div>
+
+        <div class="reviews-container">
+            <!-- Review Form -->
+            <div class="review-form-wrapper">
+                <form id="feedback-form" class="feedback-form">
+                    <div class="form-group">
+                        <label for="fb-name">Your Name</label>
+                        <input type="text" id="fb-name" required placeholder="Dr. John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fb-text">Your Feedback</label>
+                        <textarea id="fb-text" rows="4" required
+                            placeholder="How did this book resonate with your experience?"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Post Feedback</button>
+                    <div id="bad-word-error"
+                        style="display:none; color:#e53e3e; background:#fff5f5; border:1px solid #feb2b2; padding:10px 14px; border-radius:6px; margin-top:8px; font-size:14px;">
+                    </div>
+                </form>
+            </div>
+
+            <!-- Review List -->
+            <div class="review-list-wrapper">
+                <div class="review-list" id="review-list">
+
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═ FOOTER ═ -->
-<footer class="site-footer">
-    <div class="footer-top">
-        <div class="footer-col brand-col">
-            <div class="footer-book-cover">
-                <img src="book-cover.png" alt="Book Cover">
+    <!-- ═ AUTHOR NOTE ═ -->
+    <section id="note" class="author-note-section">
+        <div class="note-container">
+            <div class="note-content">
+                <p class="note-eyebrow">A NOTE FROM THE AUTHOR</p>
+                <h2 class="note-title">Thank You For<br>Choosing To Transform<br><em>Your Residency</em></h2>
+
+                <div class="note-body">
+                    <p>This book is my sincere and honest effort to highlight the most pragmatic, basic, and easily
+                        ignored aspects of life during residency. Having done two heavy residencies, I understood how
+                        much life exists outside the white coat — and how deeply it impacts your whole being.</p>
+
+                    <p>When I raised my voice on social media about NEET, residency toxicity, and work ethics — messages
+                        flooded in every day. Every struggle was different, yet the fundamentals were the same.</p>
+
+                    <p>This book carries 6 years of wisdom, insights from 20+ successful doctors, and my own story —
+                        infused together so you can use it as a personal guide alongside your study books.</p>
+
+                    <p>I hope it brings you clarity, grounds you in basics, and disciplines you toward the ideal version
+                        of you.</p>
+
+                    <p><strong>Let's go!!</strong></p>
+                </div>
+
+                <blockquote class="note-quote">
+                    "You have a right to perform your prescribed duties, but never be attached to the fruits of your
+                    actions."
+                    <footer>— Bhagavad Gita 2.47</footer>
+                </blockquote>
             </div>
-            <h2 class="footer-name">Dr. Devesh <em>Bhargude</em></h2>
-            <p class="footer-tagline">Cardiologist | Author | Mentor</p>
-        </div>
-        <div class="footer-col links-col">
-            <h4>Explore</h4>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#book">The Book</a></li>
-                <li><a href="#journey">Journey</a></li>
-                <li><a href="#author">Author</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-            </ul>
-        </div>
-        <div class="footer-col contact-col">
-            <h4>Contact</h4>
-            <p><a href="mailto:contact@drdevesh.com">contact@drdevesh.com</a></p>
-            <div class="social-links">
-                <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
-                <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+            <div class="note-image">
+                <div class="note-photo-frame">
+                    <!-- Placeholder for image later -->
+                    <img src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?w=800&q=80"
+                        alt="Author Note Photo" class="note-img">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p><a href="/d7x9k2-management.html" style="text-decoration:none; color:inherit; cursor:text;" title="">&copy;</a> 2026 Dr. Devesh Bhargude. All rights reserved.</p>
-    </div>
-</footer>
+    </section>
 
-<script>
-// ═══════════════════════════════════════
-// CONSOLE / DEVTOOLS PROTECTION
-// ═══════════════════════════════════════
+    <!-- ═ FOOTER ═ -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-col brand-col">
+                <div class="footer-book-cover">
+                    <img src="book-cover.png" alt="Book Cover">
+                </div>
+                <h2 class="footer-name">Dr. Devesh <em>Bhargude</em></h2>
+                <p class="footer-tagline">Cardiologist | Author | Mentor</p>
+            </div>
+            <div class="footer-col links-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#book">The Book</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#author">Author</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>Contact</h4>
+                <p><a href="mailto:contact@drdevesh.com">contact@drdevesh.com</a></p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect width="4" height="12" x="2" y="9" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg></a>
+                    <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><a href="/d7x9k2-management.html" style="text-decoration:none; color:inherit; cursor:text;"
+                    title="">&copy;</a> 2026 Dr. Devesh Bhargude. All rights reserved.</p>
+        </div>
+    </footer>
 
-(function() {
+    <script>
+        // ═══════════════════════════════════════
+        // CONSOLE / DEVTOOLS PROTECTION
+        // ═══════════════════════════════════════
 
-  // 1. Right click disable
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    return false;
-  });
-
-  // 2. Keyboard shortcuts disable
-  document.addEventListener('keydown', function(e) {
-    // F12
-    if (e.key === 'F12') { e.preventDefault(); return false; }
-    // Ctrl+Shift+I (inspect)
-    if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
-    // Ctrl+Shift+J (console)
-    if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
-    // Ctrl+Shift+C (element picker)
-    if (e.ctrlKey && e.shiftKey && e.key === 'C') { e.preventDefault(); return false; }
-    // Ctrl+U (view source)
-    if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
-    // Ctrl+S (save page)
-    if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
-  });
-
-  // 3. DevTools open detection
-  var devtoolsOpen = false;
-  var threshold = 160;
-
-  setInterval(function() {
-    if (
-      window.outerWidth - window.innerWidth > threshold ||
-      window.outerHeight - window.innerHeight > threshold
-    ) {
-      if (!devtoolsOpen) {
-        devtoolsOpen = true;
-        // Clear page + show warning
-        document.body.innerHTML = `
-          <div style="
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            justify-content:center;
-            height:100vh;
-            background:#0a0a0a;
-            color:#fff;
-            font-family:sans-serif;
-            text-align:center;
-            padding:20px;
-          ">
-            <h1 style="font-size:48px;margin-bottom:10px;">🔒</h1>
-            <h2 style="font-size:24px;margin-bottom:10px;">
-              Access Restricted
-            </h2>
-            <p style="color:#999;font-size:16px;">
-              Developer tools are not permitted on this page.
-            </p>
-            <button onclick="window.location.reload()" style="
-              margin-top:20px;
-              padding:10px 24px;
-              background:#c9a84c;
-              color:#000;
-              border:none;
-              border-radius:6px;
-              font-size:16px;
-              cursor:pointer;
-            ">Go Back</button>
-          </div>
-        `;
-      }
-    } else {
-      devtoolsOpen = false;
-    }
-  }, 500);
-
-  // 4. Disable text selection sitewide
-  document.addEventListener('selectstart', function(e) {
-    e.preventDefault();
-    return false;
-  });
-
-  // 5. Disable drag
-  document.addEventListener('dragstart', function(e) {
-    e.preventDefault();
-    return false;
-  });
-
-  // 6. Console warning message
-  console.log = function() {};
-  console.warn = function() {};
-  console.error = function() {};
-  console.clear();
-
-  // Custom warning for anyone who opens console manually
-  setTimeout(function() {
-    console.clear();
-  }, 100);
-
-})();
-</script>
+        /* (function() {
+        
+          // 1. Right click disable
+          document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+          });
+        
+          // 2. Keyboard shortcuts disable
+          document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12') { e.preventDefault(); return false; }
+            // Ctrl+Shift+I (inspect)
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
+            // Ctrl+Shift+J (console)
+            if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
+            // Ctrl+Shift+C (element picker)
+            if (e.ctrlKey && e.shiftKey && e.key === 'C') { e.preventDefault(); return false; }
+            // Ctrl+U (view source)
+            if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+            // Ctrl+S (save page)
+            if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+          });
+        
+          // 3. DevTools open detection
+          var devtoolsOpen = false;
+          var threshold = 160;
+        
+          setInterval(function() {
+            if (
+              window.outerWidth - window.innerWidth > threshold ||
+              window.outerHeight - window.innerHeight > threshold
+            ) {
+              if (!devtoolsOpen) {
+                devtoolsOpen = true;
+                // Clear page + show warning
+                document.body.innerHTML = `
+                  <div style="
+                    display:flex;
+                    flex-direction:column;
+                    align-items:center;
+                    justify-content:center;
+                    height:100vh;
+                    background:#0a0a0a;
+                    color:#fff;
+                    font-family:sans-serif;
+                    text-align:center;
+                    padding:20px;
+                  ">
+                    <h1 style="font-size:48px;margin-bottom:10px;">🔒</h1>
+                    <h2 style="font-size:24px;margin-bottom:10px;">
+                      Access Restricted
+                    </h2>
+                    <p style="color:#999;font-size:16px;">
+                      Developer tools are not permitted on this page.
+                    </p>
+                    <button onclick="window.location.reload()" style="
+                      margin-top:20px;
+                      padding:10px 24px;
+                      background:#c9a84c;
+                      color:#000;
+                      border:none;
+                      border-radius:6px;
+                      font-size:16px;
+                      cursor:pointer;
+                    ">Go Back</button>
+                  </div>
+                `;
+              }
+            } else {
+              devtoolsOpen = false;
+            }
+          }, 500);
+        
+          // 4. Disable text selection sitewide
+          document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+          });
+        
+          // 5. Disable drag
+          document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+          });
+        
+          // 6. Console warning message
+          console.log = function() {};
+          console.warn = function() {};
+          console.error = function() {};
+          console.clear();
+        
+          // Custom warning for anyone who opens console manually
+          setTimeout(function() {
+            console.clear();
+          }, 100);
+        
+        })(); */
+    </script>
 </body>
+
 </html>
