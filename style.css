@@ -1,8 +1,5 @@
-/* ══════════════════════════════════════════════════════════════════
-   DR. DEVESH BHARGUDE — Complete Redesign
-   Hero: Cinematic full-bleed (John Grisham style)
-   Section 2: Two-panel editorial (white left / dark navy right)
-══════════════════════════════════════════════════════════════════ */
+/* Hero: Cinematic full-bleed (John Grisham style)
+   Section 2: Two-panel editorial (white left / dark navy right) */
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
@@ -30,9 +27,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* ══════════════════════════════════════════════════════
-   NAVBAR
-══════════════════════════════════════════════════════ */
+/* NAVBAR */
 .navbar {
     position: fixed; top: 0; left: 0; right: 0; z-index: 300;
     padding: 24px 60px;
@@ -48,33 +43,31 @@ body {
 }
 .nav-logo {
     font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600;
-    color: var(--gold); text-decoration: none; letter-spacing: 0.04em;
+    color: #fff; text-decoration: none; letter-spacing: 0.04em;
 }
 .nav-links { display: flex; gap: 42px; list-style: none; }
 .nav-links a {
     font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--ice); text-decoration: none;
+    text-transform: uppercase; color: #fff; text-decoration: none;
     position: relative; transition: color 0.3s;
 }
+.nav-links a:hover { color: var(--gold); }
 .nav-links a::after {
     content: ''; position: absolute; bottom: -3px; left: 0;
-    width: 0; height: 1px; background: var(--gold); transition: width 0.35s;
+    width: 0; height: 1px; background: #fff; transition: width 0.35s;
 }
-.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover { color: #fff; }
 .nav-links a:hover::after { width: 100%; }
 
-/* ══════════════════════════════════════════════════════
-   HERO — TWO-PANEL STRUCTURE (John Grisham style)
-   Panel 1 (top): Cinematic full-width mosaic + author photo
-   Panel 2 (bottom): Separate dark-navy book announcement band
-══════════════════════════════════════════════════════ */
+/* Panel 1 (top): Cinematic full-width mosaic + author photo
+   Panel 2 (bottom): Separate dark-navy book announcement band */
 
-/* ─── PANEL 1: Top Cinematic Band ─── */
+
 .hero-panel-top {
     position: relative;
     width: 100%;
-    height: 62vh;
-    min-height: 420px;
+    height: 85vh;
+    min-height: 600px;
     overflow: hidden;
     background: #050a12;
     display: flex;
@@ -115,7 +108,7 @@ body {
         transparent 25%, rgba(5,10,18,0.72) 100%);
 }
 
-/* Author photo — right 40% blended */
+
 .hero-photo-zone {
     position: absolute;
     right: 0; top: 0; bottom: 0;
@@ -129,7 +122,7 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: center;
     display: block;
     -webkit-mask-image:
         linear-gradient(to right,
@@ -194,7 +187,7 @@ body {
 }
 .hc-sep { color: var(--gold); opacity: 0.45; font-size: 0.7rem; }
 
-/* Giant name — single centered line like Grisham */
+
 .hero-name {
     font-family: 'Playfair Display', serif;
     font-weight: 800;
@@ -225,7 +218,7 @@ body {
     background: rgba(201,168,76,0.35);
 }
 
-/* ─── PANEL 2: Bottom Book Announcement Band ─── */
+
 .hero-panel-bottom {
     width: 100%;
     background: var(--navy);
@@ -363,9 +356,7 @@ body {
     background: var(--gold); animation: scrollPulse 2.4s ease infinite;
 }
 
-/* ══════════════════════════════════════════════════════
-   KEYFRAMES
-══════════════════════════════════════════════════════ */
+/* KEYFRAMES */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(26px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -388,9 +379,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ──────────────────────────────────────────────────────
-   DEDICATION SECTION
-────────────────────────────────────────────────────── */
+/* DEDICATION SECTION */
 .dedication-section {
     background: var(--navy);
     padding: 80px 5%;
@@ -418,9 +407,7 @@ body {
     .dedication-content p br { display: block; }
 }
 
-/* ──────────────────────────────────────────────────────
-   PANEL A (Cream / About & Grid)
-────────────────────────────────────────────────────── */
+/* PANEL A (Cream / About & Grid) */
 .s2a-panel {
     display: flex;
     min-height: 80vh;
@@ -454,13 +441,14 @@ body {
     z-index: 1;
 }
 .s2a-eyebrow {
-    font-size: 0.65rem; letter-spacing: 0.25em;
+    font-size: 0.85rem; letter-spacing: 0.25em;
+    font-weight: 700;
     text-transform: uppercase; color: var(--gold);
     margin-bottom: 20px;
 }
 .s2a-heading {
     font-family: 'Playfair Display', serif;
-    font-size: 3.2rem; line-height: 1.1;
+    font-size: 3.8rem; line-height: 1.1;
     color: var(--ink); margin-bottom: 24px;
 }
 .s2a-heading em {
@@ -512,42 +500,42 @@ body {
     position: relative;
     z-index: 1;
 }
-.s2a-tilt-card {
+.s2a-dual-cards {
     position: relative;
     width: 100%;
-    max-width: 480px;
-    border-radius: 12px;
-    overflow: hidden;
-    transform: perspective(1000px) rotateX(0) rotateY(0);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    /* Increased shadow for more depth */
-    box-shadow: 0 25px 50px rgba(0,0,0,0.35), 0 10px 20px rgba(0,0,0,0.25);
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.s2a-tilt-card:hover {
-    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.02);
-    /* Even deeper shadow on hover */
-    box-shadow: 0 35px 70px rgba(0,0,0,0.45), 0 15px 30px rgba(0,0,0,0.35);
-}
-.s2a-tilt-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-.s2a-glass-overlay {
+.s2a-card {
     position: absolute;
-    inset: 0;
-    /* Glare effect without blurring the image beneath */
-    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.15) 100%);
-    border: 1px solid rgba(255,255,255,0.4);
-    border-radius: 12px;
-    pointer-events: none;
-    box-shadow: inset 0 0 20px rgba(255,255,255,0.2); /* inner glow for depth */
+    height: 550px;
+    width: 390px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+.s2a-card-back {
+    transform: rotate(-6deg) translateX(40px);
+    z-index: 1;
+}
+.s2a-card-front {
+    transform: rotate(6deg) translateX(-40px);
+    z-index: 2;
+}
+.s2a-card-back:hover {
+    transform: translateY(-15px) rotate(-4deg) translateX(40px);
+    box-shadow: 0 35px 70px rgba(0,0,0,0.45);
+    z-index: 3;
+}
+.s2a-card-front:hover {
+    transform: translateY(-15px) rotate(4deg) translateX(-40px);
+    box-shadow: 0 35px 70px rgba(0,0,0,0.45);
 }
 
-/* ──────────────────────────────────────────────────────
-   PANEL B (Dark Navy)
-────────────────────────────────────────────────────── */
+/* PANEL B (Dark Navy) */
 .s2b-panel {
     display: flex;
     min-height: 80vh;
@@ -770,9 +758,7 @@ body {
 }
 
 
-/* ══════════════════════════════════════════════════════
-   EXPLORE FULLY MODAL
-══════════════════════════════════════════════════════ */
+/* EXPLORE FULLY MODAL */
 .read-modal {
     position: fixed; inset: 0; z-index: 9999;
     background: rgba(8, 13, 20, 0.88);
@@ -790,7 +776,7 @@ body {
 .btn-close-modal:hover { color: var(--gold); transform: rotate(90deg); }
 .read-modal-content {
     background: var(--paper);
-    width: 90%; max-width: 800px; height: 85vh;
+    width: 45%; max-width: 800px; height: 85vh;
     border-radius: 4px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     overflow: hidden; display: flex; flex-direction: column;
@@ -818,9 +804,7 @@ body {
     color: var(--ink-mid); margin-bottom: 24px; text-indent: 2em;
 }
 
-/* ══════════════════════════════════════════════════════
-   SECTION 3: AUTHOR JOURNEY
-══════════════════════════════════════════════════════ */
+/* SECTION 3: AUTHOR JOURNEY */
 .journey-section {
     background: var(--paper);
     position: relative;
@@ -920,17 +904,13 @@ body {
 }
 .text-left .j-desc { margin-left: auto; }
 
-/* ══════════════════════════════════════════════════════
-   SECTION 4: GALLERY (3D CAROUSEL)
-══════════════════════════════════════════════════════ */
+/* SECTION 4: GALLERY (3D CAROUSEL) */
 .gallery-section {
     background: #000; color: #fff;
     padding: 80px 0; position: relative; overflow: hidden;
 }
 
-/* ══════════════════════════════════════════════════════
-   SECTION 4: ABOUT THE AUTHOR (with Flip Gallery)
-══════════════════════════════════════════════════════ */
+/* SECTION 4: ABOUT THE AUTHOR (with Flip Gallery) */
 .author-panel {
     display: flex;
     flex-direction: row;
@@ -942,8 +922,10 @@ body {
     margin: 0 auto;
 }
 .author-left {
-    flex: 0 0 300px;
+    flex: 0 0 380px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 .author-right {
@@ -981,14 +963,14 @@ body {
 
 .flip-gallery-container {
     position: relative;
-    width: 240px; 
-    height: 426px; /* Aspect ratio of 476x846 */
+    width: 280px; 
+    height: 426px; /* Slightly wider aspect ratio */
     text-align: center;
     perspective: 800px;
 }
 @media (min-width: 600px) {
     .flip-gallery-container {
-        width: 280px;
+        width: 350px;
         height: 498px;
     }
 }
@@ -1008,12 +990,12 @@ body {
     width: 100%;
     height: 50%;
     overflow: hidden;
-    background-size: 240px 426px;
+    background-size: 280px 426px;
     background-repeat: no-repeat;
 }
 @media (min-width: 600px) {
     .flip-gallery-container .unite {
-        background-size: 280px 498px;
+        background-size: 350px 498px;
     }
 }
 .flip-gallery-container .top,
@@ -1033,9 +1015,7 @@ body {
 .flip-gallery-container .overlay-top { z-index: 4; }
 .flip-gallery-container .overlay-bottom { z-index: 4; }
 
-/* ══════════════════════════════════════════════════════
-   AUTHOR NOTE
-══════════════════════════════════════════════════════ */
+/* AUTHOR NOTE */
 .author-note-section {
     background: var(--navy);
     padding: 100px 5%;
@@ -1097,9 +1077,7 @@ body {
     .note-container { flex-direction: column; gap: 40px; }
 }
 
-/* ══════════════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════════════ */
+/* FOOTER */
 .site-footer { background: var(--paper); color: var(--ink); padding: 80px 5% 20px; }
 .footer-top { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; margin-bottom: 60px; flex-wrap: wrap; }
 .footer-col { flex: 1; min-width: 250px; }
@@ -1126,9 +1104,7 @@ body {
 .social-links a:hover { background: var(--gold); color: var(--paper); }
 .footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px; text-align: center; font-size: 0.85rem; color: var(--ink-mid); }
 
-/* ══════════════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════════════ */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
     .hero-panel-top-content { margin-right: 40%; }
     .hero-photo-zone { width: 42%; }
@@ -1179,9 +1155,7 @@ body {
     .review-list-wrapper { max-height: 400px; }
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   SECTION 5: LIVE FEEDBACK
-   ═══════════════════════════════════════════════════════════════ */
+/* SECTION 5: LIVE FEEDBACK */
 .reviews-section {
     background: var(--paper); color: var(--ink);
     padding: 100px 5% 120px;
@@ -1258,4 +1232,71 @@ body {
 }
 .no-reviews {
     color: var(--ink-mid); font-style: italic; text-align: center; margin-top: 40px;
+}
+
+/* Every Chapter Built For You Section */
+.s2b-features-section {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 400px;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+.s2b-features-title {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
+    font-family: 'Inter', sans-serif;
+    margin-top: 0;
+}
+.s2b-features-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+}
+.s2b-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+.s2b-feature-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+.s2b-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 2px;
+}
+.s2b-feature-head {
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+}
+.s2b-feature-desc {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    font-family: 'Inter', sans-serif;
 }

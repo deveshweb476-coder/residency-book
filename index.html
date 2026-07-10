@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sentry Error Tracking -->
+    <script src="https://js.sentry-cdn.com/bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+        if (typeof Sentry !== 'undefined') {
+            Sentry.init({
+                dsn: "https://examplePublicKey@o0.ingest.sentry.io/0", // TODO: Replace with your actual Sentry DSN
+                release: "dr-devesh-website@1.0.0",
+                integrations: [
+                    Sentry.browserTracingIntegration(),
+                    Sentry.replayIntegration()
+                ],
+                tracesSampleRate: 1.0, 
+                replaysSessionSampleRate: 0.1, 
+                replaysOnErrorSampleRate: 1.0, 
+            });
+        }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Devesh Bhargude – Redefining Residency Life In Your Own Terms</title>
@@ -13,7 +31,8 @@
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="main.js?v=18" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>`r`n    <script src="main.js?v=18" defer></script>
+    <script src="badword-filter-v2.js" defer></script>
 </head>
 <body class="light-mode">
 
@@ -22,9 +41,9 @@
     <ul class="nav-links">
         <li><a href="#book">Book</a></li>
         <li><a href="#journey">Journey</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#author">Author</a></li>
         <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#note">Note</a></li>
     </ul>
 </nav>
 
@@ -43,7 +62,7 @@
 
     <!-- Author photo — right side, blended into mosaic -->
     <div class="hero-photo-zone" aria-hidden="true">
-        <img src="author-photo.png" alt="" class="hero-author-photo" id="heroAuthorPhoto">
+        <img src="doctor-image.jpeg" alt="" class="hero-author-photo" id="heroAuthorPhoto">
     </div>
 
     <!-- Social icons top right -->
@@ -86,7 +105,7 @@
     <div class="hpb-left" id="hpbLeft">
         <p class="hpb-eyebrow">Now Available on Amazon KDP</p>
         <h2 class="hpb-title">Redefining Residency Life<br><em>In Your Own Terms</em></h2>
-        <p class="hpb-desc">True stories from the trenches of medical residency — from the shock of MBBS to conquering DM Cardiology &amp; MRCP UK.</p>
+        <p class="hpb-desc">From shock of MBBS internship to loosing to MD medicine residency and discovering fundamental principles and laws to optimise your residency and redefine it in your own terms</p>
         <a href="https://www.amazon.in" target="_blank" rel="noopener" class="hpb-btn" id="amazon-btn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.869-1.234-1.274-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.66 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.891 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.548.582l-3.061-.329c-.259-.057-.548-.266-.472-.661C6.97.996 9.929 0 12.567 0c1.347 0 3.107.359 4.168 1.381 1.347 1.258 1.219 2.938 1.219 4.764v4.314c0 1.297.538 1.867 1.045 2.568.178.25.217.547-.01.733-.566.472-1.571 1.353-2.124 1.845h.279z"/></svg>
             Order Now &nbsp;&#8964;
@@ -130,7 +149,7 @@
     <!-- LEFT: About text -->
     <div class="s2a-left">
         <p class="s2a-eyebrow">WHY THIS BOOK</p>
-        <h2 class="s2a-heading">Because No One Talks About What Residency Really Costs</h2>
+        <h2 class="s2a-heading"><em>Because No One Talks About What Residency Really Costs</em></h2>
         <p class="s2a-body">
             Beneath the white coat and the forced smile, the average residency looks nothing like what you signed up for. Sleep deprivation becomes a baseline. Immunity weakens. Anxiety climbs without acknowledgement. The sense of purpose that survived a drop year and cracked NEET — slowly begins to dull at the edges.
         </p>
@@ -138,25 +157,25 @@
             The problem is not you. It was never you. It is systemic, widespread, and almost entirely unspoken.
         </p>
         <p class="s2a-body">
-            When Dr. Bhargude began speaking about residency on social media, hundreds of residents wrote in — unburdening themselves to a stranger on a screen because there was, it seemed, nowhere else to put it.
+            When I began speaking about residency on social media, I was not prepared for what came back. Hundreds of residents wrote in — unburdening themselves to a stranger on a screen because there was, it seemed, nowhere else to put it.
         </p>
         <p class="s2a-body">
-            He looked for material written honestly for residents, by someone who had lived it from the inside. He found very little. So he built something of his own.
+            I looked for material written honestly for residents, by someone who had lived it from the inside. I found very little. So I built something of my own.
         </p>
         <p class="s2a-body">
             This book refuses the unspoken agreement that residency is supposed to be hard — and its casualties are supposed to be silent.
         </p>
         <p class="s2a-quote">"Why not help people get the best out of something that is quietly taking the worst from them?"<br><span style="font-size: 0.8em; margin-top: 10px; display: block;">— Dr. Devesh Bhargude</span></p>
         <div class="s2a-cta-row">
-            <a href="https://www.amazon.in" target="_blank" rel="noopener" class="s2a-btn-primary">Get Your Copy &rarr;</a>
+            <button class="s2a-btn-primary btn-open-modal">Read More &rarr;</button>
         </div>
     </div>
 
-    <!-- RIGHT: Single image with glass and tilt effect -->
+    <!-- RIGHT: Dual animated cards -->
     <div class="s2a-right">
-        <div class="s2a-tilt-card" id="s2aTiltCard">
-            <img src="why thi book page.jpg" alt="Graduation" loading="lazy" class="s2a-tilt-img">
-            <div class="s2a-glass-overlay"></div>
+        <div class="s2a-dual-cards">
+            <img src="section-2-image.jpg" alt="Residency Image" class="s2a-card s2a-card-back">
+            <img src="why thi book page.jpg" alt="Graduation" class="s2a-card s2a-card-front">
         </div>
     </div>
 
@@ -230,10 +249,46 @@
                     <span class="s2b-title">Mental Health</span>
                 </div>
                 <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </li>
             <li class="s2b-item" data-ch="8">
                 <span class="s2b-num">09</span>
                 <div class="s2b-item-body">
+                    <span class="s2b-title">Depersonalization</span>
+                </div>
+                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </li>
+            <li class="s2b-item" data-ch="9">
+                <span class="s2b-num">10</span>
+                <div class="s2b-item-body">
+                    <span class="s2b-title">Building CV</span>
+                </div>
+                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </li>
+            <li class="s2b-item" data-ch="10">
+                <span class="s2b-num">11</span>
+                <div class="s2b-item-body">
+                    <span class="s2b-title">Sex Transmutation</span>
+                </div>
+                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </li>
+            <li class="s2b-item" data-ch="11">
+                <span class="s2b-num">12</span>
+                <div class="s2b-item-body">
+                    <span class="s2b-title">What to Expect from Residency?</span>
+                </div>
+                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </li>
+            <li class="s2b-item" data-ch="12">
+                <span class="s2b-num">13</span>
+                <div class="s2b-item-body">
                     <span class="s2b-title">The Only Good Habits That Matter</span>
+                </div>
+                <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </li>
+            <li class="s2b-item" data-ch="13">
+                <span class="s2b-num">14</span>
+                <div class="s2b-item-body">
+                    <span class="s2b-title">Finale</span>
                 </div>
                 <svg class="s2b-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </li>
@@ -281,6 +336,48 @@
             <span class="s2b-avail-dot"></span>
             Now Available on Amazon KDP
         </div>
+
+        <!-- Every Chapter Section -->
+        <div class="s2b-features-section">
+            <h4 class="s2b-features-title">Every Chapter Is Built For You</h4>
+            <ul class="s2b-features-list">
+                <li class="s2b-feature-item">
+                    <div class="s2b-feature-icon">📖</div>
+                    <div class="s2b-feature-text">
+                        <span class="s2b-feature-head">Title</span>
+                        <span class="s2b-feature-desc">Sets the stage for what's ahead</span>
+                    </div>
+                </li>
+                <li class="s2b-feature-item">
+                    <div class="s2b-feature-icon">🏥</div>
+                    <div class="s2b-feature-text">
+                        <span class="s2b-feature-head">Patient &amp; Colleague Stories</span>
+                        <span class="s2b-feature-desc">Real cases, real people, real situations</span>
+                    </div>
+                </li>
+                <li class="s2b-feature-item">
+                    <div class="s2b-feature-icon">🔄</div>
+                    <div class="s2b-feature-text">
+                        <span class="s2b-feature-head">My Story</span>
+                        <span class="s2b-feature-desc">Mistakes, lessons and transformation — lived from the inside</span>
+                    </div>
+                </li>
+                <li class="s2b-feature-item">
+                    <div class="s2b-feature-icon">⚙️</div>
+                    <div class="s2b-feature-text">
+                        <span class="s2b-feature-head">The Process</span>
+                        <span class="s2b-feature-desc">The actionable part that will help you the most</span>
+                    </div>
+                </li>
+                <li class="s2b-feature-item">
+                    <div class="s2b-feature-icon">💡</div>
+                    <div class="s2b-feature-text">
+                        <span class="s2b-feature-head">Things I Know at 30, I Wish I Knew at 24</span>
+                        <span class="s2b-feature-desc">Hard-earned wisdom, delivered straight</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 
 </div><!-- /s2b-panel -->
@@ -299,20 +396,52 @@
     
     <div class="read-modal-content">
         <div class="book-pages-scroll">
-            <h2 class="book-modal-title">Excerpt: The First Shift</h2>
+            <h2 class="book-modal-title">Why This Book Exists?</h2>
             <div class="book-text-body">
-                <p>It was 2:00 AM on a Tuesday, and the emergency department was chaotic. The fluorescent lights buzzed overhead, casting a sterile glare on the linoleum floor. I had been awake for twenty hours, fueled only by lukewarm coffee and pure adrenaline.</p>
-                <p>When you first walk into residency, you carry the weight of your medical degree like a shield. You think the letters 'MBBS' after your name will somehow protect you from the crushing reality of a failing healthcare system. You are wrong.</p>
-                <p>The transition from student to doctor happens in an instant. There is no grace period. One day you are observing, and the next, a nurse is looking at you, expecting orders for a patient whose blood pressure is plummeting.</p>
-                <p>This book isn't just about surviving those moments; it's about redefining them. It's about learning how to thrive when the environment demands your complete exhaustion. It's about taking back control of your residency life, on your own terms.</p>
-                <p>Every resident remembers their first solo night float. The terrifying realization that the buck stops with you. When the pager goes off, there is no attending to hide behind. It is a baptism by fire, and the only way out is through.</p>
-                <p>But amidst the chaos, there are moments of profound clarity. The first time you successfully revive a coding patient. The quiet gratitude in a family member's eyes. These are the fragments that you cling to, the pieces that build the foundation of your career.</p>
+                <p>The idea was simple, and it arrived the way most honest ideas do — not in a moment of inspiration, but in a moment of recognition.</p>
+                <p>I thought: why not share this journey with others? Why not help people get the best out of something that is quietly taking the worst from them?</p>
+                <p>When I began speaking about residency on social media, I was not prepared for what came back. Hundreds of messages. Residents from across the country, writing in with a candour they clearly could not afford in their wards or their departments — unburdening themselves to a stranger on a screen because there was, it seemed, nowhere else to put it. The volume was not surprising as much as it was clarifying. The problem was not isolated. It was not a matter of individual weakness or poor adjustment. It was systemic, widespread, and almost entirely unspoken.</p>
+                <p>I looked for material that addressed it honestly. Something written for residents, about residents, by someone who had lived it from the inside. I found very little. So I spoke to people. I listened carefully. And eventually, I built something of my own.</p>
+                <br>
+                <p><strong>Because here is what the average residency actually looks like, beneath the white coat and the forced smile.</strong></p>
+                <p>The body takes the first blow. Sleep deprivation becomes a baseline state rather than an exception. Immunity weakens quietly and persistently. Nearly seventy percent of residents report musculoskeletal pain. Weight is lost — the wrong kind — and then regained, also the wrong kind. Meals are incidental. Rest is rationed.</p>
+                <p>Then the mind follows.</p>
+                <p>Anxiety climbs without acknowledgement or outlet. The sense of reward — that fundamental human need to feel that effort means something — slowly erodes. Polysubstance abuse enters, often gradually, often socially, and then less so. Sleep architecture fractures. Emotional balance, once taken for granted, becomes difficult to locate. Some residents begin self-medicating — anxiolytics, antidepressants, painkillers — not out of recklessness but out of a quiet, desperate attempt to continue functioning.</p>
+                <p>The sense of purpose, which once felt iron-strong — strong enough to survive a drop year, strong enough to crack NEET — begins to dull at the edges. The future, which once seemed like something being actively built, starts to feel abstract, distant, and increasingly difficult to plan for.</p>
+                <p>Relationships fracture. Infidelity is more common than anyone discusses. Depersonalisation sets in — that strange, unsettling sensation of watching your own life from a slight distance, of going through the motions of caring without being able to fully feel the act of it. The academic spark — that original hunger that brought most of us here — dims. Not dramatically, not all at once, but steadily, in the way that neglected fires do.</p>
+                <p>And this, I want to be clear, is only what surfaces.</p>
+                <p>The rest stays buried. Pressed down beneath clinical responsibility and professional obligation and the unspoken agreement that residency is supposed to be hard and therefore its casualties are supposed to be silent.</p>
+                <p>This book refuses that agreement.</p>
                 <br><br><br><br>
-                <p style="text-align: center; color: rgba(26,26,42,0.4); font-style: italic;">[End of Preview. The full book explores these themes in profound depth, offering a practical roadmap for every aspiring medical professional.]</p>
             </div>
         </div>
     </div>
 </div>
+
+<!-- ═══ AUTHOR MODAL ═══ -->
+<div class="read-modal" id="author-modal">
+    <button class="btn-close-modal" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+    
+    <div class="read-modal-content">
+        <div class="book-pages-scroll">
+            <h2 class="book-modal-title">ABOUT THE AUTHOR</h2>
+            <div class="book-text-body">
+                <p>Hello everyone, I am Dr. Devesh Bhargude. I assume you already know me at least partially but I'd love to be as honest as possible with you. At the time of writing this book I'm in my final year of cardiology residency and the last semester. I truly love cardiology and have an inherent interest to learn and grow and the same interest spans across multiple spectrums of my life. As I navigated through the journey of residency I built my fitness to the fittest possible realm of life where I can run half marathons, lift 200 kg for deadlift, 20kgs of muscle ups, 1000 pushups in an hour, 500 pull ups at 4.00 am and so on. I enjoy the vitality it provides and has truly become my identity. I do have miles to go and this isn't something to glorify about, because I believe everyone should do it. I became seriously disciplined with nutrition and supplementation and I preach about the same over Instagram platform where I hope to provide as much knowledge as possible in the most scientific manner.</p>
+                <p>I am an academic nerd, Being in Top all India ranks and having won few academic quizzes and publish few articles, which I wish to do more often. I have presented in more than 10+ conferences and completed my MRCP UK during first year of residency where I would be doing 36 hours shifts almost 10 times a month, something that was unimaginable to me when I first heard it.</p>
+                <p>Here's the fact, these are all external endeavors but the real growth I believe is more mental and spiritual. I love reading and happen to read 60+ books in last 2 years. I meditate for 20 minutes almost every day and I train martial arts (I train staff training) the first thing in the morning (nobody actually knows this, that's something personal for me). I travelled almost every month and built even deeper relationship with my family who are my strongest supporters. I love them with all my heart and they are my strongest motivators. Coming from a small town of a population of merely 2000+ to becoming the current version of me, and realizing that I am on a path to become the version of me that I always wanted to become.</p>
+                <p>I am fully grateful for this chance at life and to be able to provide genuine value to you and my patients. I guess the whole journey of residency which is portrayed initially and conventionally to us is incomplete and partially flawed, you can and you must become the idealistic version of you and get the best experience of life from these 3 years so that you put yourself on the path to become the idealistic version of that you've dreamt of and finding your purpose and dharma which is truly yours to begin with and end with. That's the true journey and that's the opportunity that residency provides. It toughens your soul, bones and neuroplastic brain and shapes it with pragmatic abundant dimensions.</p>
+                <p>So, let's end it. The book has all the essential components which are truly basic but are ignored quite literally and taken for granted very easily. I've infused my journey along to make it look more ethereal and such that you can relate on various parameters too.</p>
+                <br><br><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <!-- ═══ SECTION 3: AUTHOR JOURNEY ═══ -->
@@ -326,7 +455,7 @@
     <!-- Row 1: IMAGE LEFT, TEXT RIGHT -->
     <div class="journey-row">
         <div class="journey-img-half img-left">
-            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Early MBBS days" class="journey-img" data-scroll-fade>
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Early MBBS days" class="journey-img" data-scroll-fade>
         </div>
         <div class="journey-text-half text-right" data-scroll-fade>
             <span class="j-number">01</span>
@@ -339,23 +468,23 @@
     <div class="journey-row row-flip">
         <div class="journey-text-half text-left" data-scroll-fade>
             <span class="j-number">02</span>
-            <h3 class="j-title">The <em>ICU Grind</em></h3>
-            <p class="j-desc">Surviving brutal 36-hour shifts, making life-or-death decisions in the dead of night, and learning the true meaning of resilience under pressure.</p>
+            <h3 class="j-title">The <em>residency Grind</em></h3>
+            <p class="j-desc">Surviving brutal 36-hour shifts, making life-or-death decisions in the dead of night, and learning the true meaning of resilience under pressure.<br><br>Slowly losing the identity of being an individual to succumbing to the residency</p>
         </div>
         <div class="journey-img-half img-right">
-            <img src="https://images.unsplash.com/photo-1631815587646-b85a1bb027e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="ICU Grind" class="journey-img" data-scroll-fade>
+            <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Residency Grind" class="journey-img" data-scroll-fade>
         </div>
     </div>
 
     <!-- Row 3: IMAGE LEFT, TEXT RIGHT -->
     <div class="journey-row">
         <div class="journey-img-half img-left">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="MRCP UK" class="journey-img" data-scroll-fade>
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Identity" class="journey-img" data-scroll-fade>
         </div>
         <div class="journey-text-half text-right" data-scroll-fade>
             <span class="j-number">03</span>
-            <h3 class="j-title">Conquering <em>MRCP UK</em></h3>
-            <p class="j-desc">A test of international standards. Validating years of relentless study and clinical practice against one of the world's most rigorous medical examinations.</p>
+            <h3 class="j-title">Conjuring the <em>Identity</em></h3>
+            <p class="j-desc">Understanding multiple dimensions of your life and optimising each aspect along with residency. Building overall character which brings you closer to your dreams not just as a trained resident but a wholesome human being</p>
         </div>
     </div>
 
@@ -363,11 +492,11 @@
     <div class="journey-row row-flip">
         <div class="journey-text-half text-left" data-scroll-fade>
             <span class="j-number">04</span>
-            <h3 class="j-title">DM <em>Cardiology</em></h3>
-            <p class="j-desc">Mastery of rhythm and heart. A culmination of a decade of training, bringing world-class cardiac care and redefining residency life on his own terms.</p>
+            <h3 class="j-title"><em>Finale</em></h3>
+            <p class="j-desc">You are God’s best creation, your DNA is a unique combination never to reoccur. Your purpose is higher, your responsibilities are higher, your duty is an emblem to its nobility. You need to honour that creation and show God the beauty of his creation, holistically.</p>
         </div>
         <div class="journey-img-half img-right">
-            <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="DM Cardiology" class="journey-img" data-scroll-fade>
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Finale" class="journey-img" data-scroll-fade>
         </div>
     </div>
 
@@ -384,6 +513,9 @@
             <div class="unite overlay-top"></div>
             <div class="unite overlay-bottom"></div>
         </div>
+        <div class="s2a-cta-row" style="margin-top: 30px; text-align: center; width: 100%;">
+            <button class="s2a-btn-primary btn-open-modal" data-target="#author-modal" style="margin: 0 auto; display: inline-block;">Read More &rarr;</button>
+        </div>
     </div>
 
     <!-- RIGHT: About the Author text -->
@@ -392,16 +524,15 @@
         <h2 class="author-heading">Dr. Devesh Bhargude<br><em>DM Cardiology · MRCP UK · DNB · MD</em></h2>
         
         <p class="author-body">
-            Dr. Devesh Bhargude is a cardiologist in his final year of residency — and one of the most unconventional doctors you will meet. Coming from a small town of barely 2000 people, he built himself into someone who runs half marathons, deadlifts 200kg, reads 60+ books a year, trains martial arts at 4 AM, and still shows up for 36-hour ICU shifts.
+            I am a cardiologist in my final year of residency — and probably one of the most unconventional doctors you will meet. Coming from a small town of barely 2000 people, I built myself into someone who runs half marathons, deadlifts 200kg, reads 60+ books a year, trains martial arts at 4 AM, and still shows up for 36-hour ICU shifts.
         </p>
         <p class="author-body">
-            He holds Top All India ranks, has presented at 10+ conferences, completed MRCP UK during residency, and actively shares evidence-based knowledge on nutrition, fitness, and medicine on Instagram.
+            I hold Top All India ranks, have presented at 10+ conferences, completed MRCP UK during residency, and actively share evidence-based knowledge on nutrition, fitness, and medicine on Instagram.
         </p>
         <p class="author-body" style="margin-bottom: 30px;">
-            But beyond the credentials — he meditates in the woods, nurtures deep family bonds, and believes the real growth of residency is mental and spiritual, not just clinical.
+            But beyond the credentials — I meditate in the woods, nurture deep family bonds, and believe the real growth of residency is mental and spiritual, not just clinical.
         </p>
-
-        <blockquote class="author-quote" style="margin-bottom: 0;">
+        <blockquote class="author-body" style="margin-bottom: 0;">
             "Coming from a small town of 2000 people to becoming the version of me I always wanted to be — that is the real story residency made possible."<br>
             <span class="quote-author">— Dr. Devesh Bhargude</span>
         </blockquote>
@@ -431,6 +562,7 @@
                     <textarea id="fb-text" rows="4" required placeholder="How did this book resonate with your experience?"></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Post Feedback</button>
+                <div id="bad-word-error" style="display:none; color:#e53e3e; background:#fff5f5; border:1px solid #feb2b2; padding:10px 14px; border-radius:6px; margin-top:8px; font-size:14px;"></div>
             </form>
         </div>
         
@@ -510,6 +642,109 @@
     </div>
 </footer>
 
+<script>
+// ═══════════════════════════════════════
+// CONSOLE / DEVTOOLS PROTECTION
+// ═══════════════════════════════════════
 
+(function() {
+
+  // 1. Right click disable
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+  });
+
+  // 2. Keyboard shortcuts disable
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === 'F12') { e.preventDefault(); return false; }
+    // Ctrl+Shift+I (inspect)
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
+    // Ctrl+Shift+J (console)
+    if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
+    // Ctrl+Shift+C (element picker)
+    if (e.ctrlKey && e.shiftKey && e.key === 'C') { e.preventDefault(); return false; }
+    // Ctrl+U (view source)
+    if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+    // Ctrl+S (save page)
+    if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+  });
+
+  // 3. DevTools open detection
+  var devtoolsOpen = false;
+  var threshold = 160;
+
+  setInterval(function() {
+    if (
+      window.outerWidth - window.innerWidth > threshold ||
+      window.outerHeight - window.innerHeight > threshold
+    ) {
+      if (!devtoolsOpen) {
+        devtoolsOpen = true;
+        // Clear page + show warning
+        document.body.innerHTML = `
+          <div style="
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            height:100vh;
+            background:#0a0a0a;
+            color:#fff;
+            font-family:sans-serif;
+            text-align:center;
+            padding:20px;
+          ">
+            <h1 style="font-size:48px;margin-bottom:10px;">🔒</h1>
+            <h2 style="font-size:24px;margin-bottom:10px;">
+              Access Restricted
+            </h2>
+            <p style="color:#999;font-size:16px;">
+              Developer tools are not permitted on this page.
+            </p>
+            <button onclick="window.location.reload()" style="
+              margin-top:20px;
+              padding:10px 24px;
+              background:#c9a84c;
+              color:#000;
+              border:none;
+              border-radius:6px;
+              font-size:16px;
+              cursor:pointer;
+            ">Go Back</button>
+          </div>
+        `;
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 500);
+
+  // 4. Disable text selection sitewide
+  document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+    return false;
+  });
+
+  // 5. Disable drag
+  document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+    return false;
+  });
+
+  // 6. Console warning message
+  console.log = function() {};
+  console.warn = function() {};
+  console.error = function() {};
+  console.clear();
+
+  // Custom warning for anyone who opens console manually
+  setTimeout(function() {
+    console.clear();
+  }, 100);
+
+})();
+</script>
 </body>
 </html>

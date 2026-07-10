@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Not Found</title>
+</head>
+<body>
+<script>
+  // Log the attempt to Supabase
+  fetch('https://tjhtplbngkyziktmdmer.supabase.co/rest/v1/security_logs', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqaHRwbGJuZ2t5emlrdG1kbWVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM2NzgyNzgsImV4cCI6MjA5OTI1NDI3OH0.vptfim9HXQur1y89XZHUuOc7uH0pcvZj8HH8XHyk520'
+    },
+    body: JSON.stringify({
+      type: 'unauthorized_admin_access',
+      url: window.location.href,
+      time: new Date().toISOString(),
+      userAgent: navigator.userAgent
+    })
+  });
+
+  // Redirect to home
+  window.location.href = '/';
+</script>
+</body>
+</html>

@@ -124,13 +124,19 @@ window.addEventListener('scroll', function () {
 
     var chapterData = [
         { num: '01', title: 'Introduction', desc: 'The transition from fresh MBBS to resident is a shock. Raw, unfiltered survival during those first brutal 36-hour shifts.', img: 'https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=800&q=80' },
-        { num: '02', title: 'The Reality of ICU', desc: 'Managing intensive care when exhausted — maintaining clinical judgment when stakes are life and death.', img: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&q=80' },
-        { num: '03', title: 'Finding the Rhythm', desc: 'From frightened junior to confident senior — the unwritten hospital rules and leading emergency teams.', img: 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&q=80' },
-        { num: '04', title: 'Mental Resilience', desc: 'Maintaining humanity through the emotional toll of residency and guarding against burnout.', img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80' },
-        { num: '05', title: 'Exams & Preparation', desc: 'Balancing patient care with study — reading in 20 stolen minutes and retaining knowledge under pressure.', img: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&q=80' },
-        { num: '06', title: 'MRCP UK Journey', desc: 'Navigating international medical exams — mindset shifts and resources to conquer the prestigious MRCP UK.', img: 'https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=800&q=80' },
-        { num: '07', title: 'The DM Pinnacle', desc: 'The grueling DM Cardiology entrance — exact steps to reach the apex of super-specialty training.', img: 'https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=800&q=80' },
-        { num: '08', title: 'Life Beyond the White Coat', desc: 'Finding balance, maintaining relationships, and leaving a legacy beyond the hospital walls.', img: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&q=80' }
+        { num: '02', title: 'Fitness', desc: 'Why lifting heavy and staying active is the ultimate counter to the brutal physical demands of residency.', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80' },
+        { num: '03', title: 'Nutrition', desc: 'Fueling your body for 36-hour shifts without relying on hospital cafeteria junk.', img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80' },
+        { num: '04', title: 'Mindset', desc: 'Developing an unbreakable psychological baseline to handle stress, loss, and exhaustion.', img: 'https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?w=800&q=80' },
+        { num: '05', title: 'Finances', desc: 'Managing resident stipends, avoiding debt traps, and building long-term wealth early.', img: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80' },
+        { num: '06', title: 'Relationships & Social Wealth', desc: 'Keeping your personal life alive when the hospital demands everything from you.', img: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80' },
+        { num: '07', title: 'Clinical Efficiency', desc: 'How to work smarter, not harder on the wards. Master the unwritten rules of hospital workflow.', img: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&q=80' },
+        { num: '08', title: 'Mental Health', desc: 'Recognizing burnout and depression before they consume you. It is okay to not be okay.', img: 'https://images.unsplash.com/photo-1520694478166-daaaaec95b69?w=800&q=80' },
+        { num: '09', title: 'Depersonalization', desc: 'The silent crisis in modern medicine. Reconnecting with your humanity when you feel numb.', img: 'https://images.unsplash.com/photo-1494959764136-6be9eb3c261e?w=800&q=80' },
+        { num: '10', title: 'Building CV', desc: 'Strategically positioning yourself for fellowships, publications, and competitive opportunities.', img: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80' },
+        { num: '11', title: 'Sex Transmutation', desc: 'Channeling raw personal energy into intense focus, discipline, and professional excellence.', img: 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80' },
+        { num: '12', title: 'What to Expect from Residency?', desc: 'A pragmatic, no-nonsense look at the realities, politics, and triumphs of postgraduate training.', img: 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80' },
+        { num: '13', title: 'The Only Good Habits That Matter', desc: 'Stripping away the noise to focus on the daily micro-habits that actually move the needle.', img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80' },
+        { num: '14', title: 'Finale', desc: 'Looking back on the journey, leaving a legacy, and moving forward as a complete physician.', img: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=800&q=80' }
     ];
 
     function activateChapter(idx) {
@@ -262,29 +268,34 @@ window.addEventListener('scroll', function () {
 /* ═══════════════════════════════════════════════════════════════
    READ MODAL
    ═══════════════════════════════════════════════════════════════ */
-var modal        = document.getElementById('read-modal');
-var btnCloseModal = document.getElementById('btn-close-modal');
-
-if (modal && btnCloseModal) {
-    // Event delegation for dynamically created "Find Out More" buttons
     document.body.addEventListener('click', function (e) {
-        if (e.target.classList.contains('btn-open-modal') || e.target.closest('.btn-open-modal')) {
-            modal.classList.add('open');
-            document.body.style.overflow = 'hidden';
+        // Open modal
+        var openBtn = e.target.closest('.btn-open-modal');
+        if (openBtn) {
+            var targetSelector = openBtn.getAttribute('data-target') || '#read-modal';
+            var targetModal = document.querySelector(targetSelector);
+            if (targetModal) {
+                targetModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
         }
-    });
-
-    btnCloseModal.addEventListener('click', function () {
-        modal.classList.remove('open');
-        document.body.style.overflow = '';
-    });
-    modal.addEventListener('click', function (e) {
-        if (e.target === modal) {
-            modal.classList.remove('open');
+        
+        // Close modal (via close button)
+        var closeBtn = e.target.closest('.btn-close-modal');
+        if (closeBtn) {
+            var openModal = closeBtn.closest('.read-modal');
+            if (openModal) {
+                openModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Close modal (via overlay click)
+        if (e.target.classList.contains('read-modal')) {
+            e.target.classList.remove('open');
             document.body.style.overflow = '';
         }
     });
-}
 
 /* ═══════════════════════════════════════════════════════════════
    SECTION 3: Journey Scroll-Reveal
@@ -384,24 +395,41 @@ if (modal && btnCloseModal) {
     var reviewList = document.getElementById('review-list');
     if (!form || !reviewList) return;
 
-    // ── Bad word list ──
-    var badWords = [
-        'fuck','shit','bitch','asshole','bastard','cunt','dick','pussy',
-        'motherfucker','faggot','nigger','chutiya','madarchod','behenchod',
-        'bhenchod','saala','gaandu','randi','harami','mc','bc','lodu',
-        'idiot','stupid','dumb','crap','bakwas'
-    ];
-
-    function containsBadWord(text) {
-        var lower = text.toLowerCase();
-        return badWords.some(function(word) {
-            return lower.includes(word);
-        });
+    // ── Supabase Setup ──
+    var SUPABASE_URL = 'https://tjhtplbngkyziktmdmer.supabase.co';
+    var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqaHRwbGJuZ2t5emlrdG1kbWVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM2NzgyNzgsImV4cCI6MjA5OTI1NDI3OH0.vptfim9HXQur1y89XZHUuOc7uH0pcvZj8HH8XHyk520';
+    
+    var supabaseClient = null;
+    if (window.supabase) {
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     }
 
     // ── All submitted reviews stored in memory ──
     var allReviews = [];
     var activeFilter = 0; // 0 = show all
+
+    // ── Fetch Reviews from Supabase ──
+    async function fetchReviews() {
+        if (!supabaseClient) {
+            // Fallback to local storage if Supabase isn't configured yet
+            var savedReviews = localStorage.getItem("drDeveshReviews");
+            allReviews = savedReviews ? JSON.parse(savedReviews) : [];
+            renderReviews();
+            return;
+        }
+
+        var { data, error } = await supabaseClient
+            .from('reviews')
+            .select('*')
+            .order('created_at', { ascending: false });
+            
+        if (!error && data) {
+            allReviews = data;
+            renderReviews();
+        }
+    }
+    fetchReviews();
+
 
     // ── Build star HTML ──
     function buildStars(rating, interactive) {
@@ -416,6 +444,22 @@ if (modal && btnCloseModal) {
         html += '</div>';
         return html;
     }
+
+    // ── XSS Prevention Helper ──
+    function escapeHTML(str) {
+        if (!str) return '';
+        return str.replace(/[&<>'"]/g, function(tag) {
+            var charsToReplace = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            };
+            return charsToReplace[tag] || tag;
+        });
+    }
+
 
     // ── Render review cards based on active filter ──
     function renderReviews() {
@@ -432,10 +476,12 @@ if (modal && btnCloseModal) {
         filtered.forEach(function(r) {
             var card = document.createElement('div');
             card.className = 'review-card';
+            var safeText = escapeHTML(r.text);
+            var safeName = escapeHTML(r.name);
             card.innerHTML =
                 buildStars(r.rating, false) +
-                '<p class="review-text">"' + r.text + '"</p>' +
-                '<p class="review-author">— ' + r.name + '</p>';
+                '<p class="review-text">"' + safeText + '"</p>' +
+                '<p class="review-author">— ' + safeName + '</p>';
             reviewList.appendChild(card);
         });
     }
@@ -508,7 +554,7 @@ if (modal && btnCloseModal) {
     });
 
     // ── Form submit ──
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         var nameVal   = document.getElementById('fb-name').value.trim();
@@ -521,6 +567,17 @@ if (modal && btnCloseModal) {
             return;
         }
 
+        // ── Rate Limiting (60 seconds cooldown) ──
+        var lastSubTime = localStorage.getItem('last_review_submit');
+        if (lastSubTime) {
+            var diff = Date.now() - parseInt(lastSubTime);
+            if (diff < 60000) {
+                var waitTime = Math.ceil((60000 - diff) / 1000);
+                alert('Please wait ' + waitTime + ' seconds before submitting another review to prevent spam.');
+                return;
+            }
+        }
+
         // Bad word check — silently block
         if (containsBadWord(textVal) || containsBadWord(nameVal)) {
             form.reset();
@@ -530,11 +587,32 @@ if (modal && btnCloseModal) {
             return;
         }
 
-        allReviews.unshift({
+        var newReview = {
             name:   nameVal,
             text:   textVal,
             rating: ratingVal
-        });
+        };
+
+        if (supabaseClient) {
+            // Push to Supabase
+            var { error } = await supabaseClient.from('reviews').insert([newReview]);
+            if (error) {
+                console.error('Error saving review:', error);
+                alert('Error saving review. Please try again.');
+                return;
+            }
+        }
+
+        // Add to local UI array immediately
+        allReviews.unshift(newReview);
+        
+        // Update rate limit timestamp
+        localStorage.setItem('last_review_submit', Date.now().toString());
+
+        // Fallback save to local storage if Supabase isn't setup
+        if (!supabaseClient) {
+            localStorage.setItem("drDeveshReviews", JSON.stringify(allReviews));
+        }
 
         form.reset();
         ratingInput.value = 0;
