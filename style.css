@@ -518,23 +518,24 @@ body {
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
 }
 
-/* Default stacked state */
-.s2a-card-4 { transform: rotate(-6deg) translateX(-15px); z-index: 1; }
-.s2a-card-3 { transform: rotate(-2deg) translateX(-5px); z-index: 2; }
-.s2a-card-2 { transform: rotate(2deg) translateX(5px); z-index: 3; }
-.s2a-card-1 { transform: rotate(6deg) translateX(15px); z-index: 4; }
+/* Default stacked state - staggered slightly for 3D effect */
+.s2a-card-4 { transform: translate(15px, 15px); z-index: 1; }
+.s2a-card-3 { transform: translate(5px, 5px); z-index: 2; }
+.s2a-card-2 { transform: translate(-5px, -5px); z-index: 3; }
+.s2a-card-1 { transform: translate(-15px, -15px); z-index: 4; }
 
-/* Fan out on hover */
-.s2a-quad-cards:hover .s2a-card-4 { transform: rotate(-15deg) translateX(-120px) translateY(20px); }
-.s2a-quad-cards:hover .s2a-card-3 { transform: rotate(-5deg) translateX(-40px) translateY(10px); }
-.s2a-quad-cards:hover .s2a-card-2 { transform: rotate(5deg) translateX(40px) translateY(10px); }
-.s2a-quad-cards:hover .s2a-card-1 { transform: rotate(15deg) translateX(120px) translateY(20px); }
+/* 2x2 Grid on hover */
+.s2a-quad-cards:hover .s2a-card-4 { transform: translate(-100px, -140px) scale(0.48); z-index: 4; opacity: 0.8; }
+.s2a-quad-cards:hover .s2a-card-3 { transform: translate(100px, -140px) scale(0.48); z-index: 4; opacity: 0.8; }
+.s2a-quad-cards:hover .s2a-card-2 { transform: translate(-100px, 140px) scale(0.48); z-index: 4; opacity: 0.8; }
+.s2a-quad-cards:hover .s2a-card-1 { transform: translate(100px, 140px) scale(0.48); z-index: 4; opacity: 0.8; }
 
-/* Pop up specific hovered card */
-.s2a-quad-cards .s2a-card:hover {
-    transform: translateY(-20px) scale(1.05) !important;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-    z-index: 10;
+/* Pop up specific hovered card in the grid to full size! */
+.s2a-quad-cards:hover .s2a-card:hover {
+    transform: translate(0, 0) scale(1) !important;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    z-index: 10 !important;
+    opacity: 1 !important;
 }
 
 /* PANEL B (Dark Navy) */
@@ -1337,11 +1338,11 @@ body {
         height: 280px;
         width: 200px;
     }
-    /* Fan out less on mobile due to smaller screen */
-    .s2a-quad-cards:hover .s2a-card-4 { transform: rotate(-12deg) translateX(-60px) translateY(10px); }
-    .s2a-quad-cards:hover .s2a-card-3 { transform: rotate(-4deg) translateX(-20px) translateY(5px); }
-    .s2a-quad-cards:hover .s2a-card-2 { transform: rotate(4deg) translateX(20px) translateY(5px); }
-    .s2a-quad-cards:hover .s2a-card-1 { transform: rotate(12deg) translateX(60px) translateY(10px); }
+    /* Mobile 2x2 Grid on hover */
+    .s2a-quad-cards:hover .s2a-card-4 { transform: translate(-52px, -72px) scale(0.48); }
+    .s2a-quad-cards:hover .s2a-card-3 { transform: translate(52px, -72px) scale(0.48); }
+    .s2a-quad-cards:hover .s2a-card-2 { transform: translate(-52px, 72px) scale(0.48); }
+    .s2a-quad-cards:hover .s2a-card-1 { transform: translate(52px, 72px) scale(0.48); }
     .s2a-cta-row { flex-wrap: wrap; gap: 12px; }
 
     /* ── SECTION 2B: TABLE OF CONTENTS ── */
