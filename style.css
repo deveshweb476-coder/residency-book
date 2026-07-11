@@ -1234,15 +1234,20 @@ body {
     gap: 16px;
 }
 .s2b-feature-icon {
-    font-size: 1.4rem;
-    line-height: 1;
-    background: rgba(255, 255, 255, 0.06);
-    padding: 10px;
-    border-radius: 8px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--gold);
+}
+.s2b-feature-icon svg {
+    width: 20px;
+    height: 20px;
 }
 .s2b-feature-text {
     display: flex;
@@ -1252,13 +1257,14 @@ body {
 }
 .s2b-feature-head {
     color: #fff;
-    font-weight: 500;
-    font-size: 0.95rem;
-    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.03em;
 }
 .s2b-feature-desc {
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.88rem;
     line-height: 1.45;
     font-family: 'Inter', sans-serif;
 }
