@@ -2,6 +2,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.110.2",
     "jsdom": "^29.1.1",
+    "nodemailer": "^9.0.3",
     "razorpay": "^2.9.6"
   }
 }
