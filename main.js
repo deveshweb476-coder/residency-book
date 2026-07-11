@@ -123,17 +123,17 @@ window.addEventListener('scroll', function () {
     var lastHoveredIndex = 0; // The first item is active by default
 
     var chapterData = [
-        { num: '01', title: 'Introduction', desc: 'The transition from fresh MBBS to resident is a shock. Raw, unfiltered survival during those first brutal 36-hour shifts.', img: 'https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=800&q=80' },
-        { num: '02', title: 'Fitness', desc: 'Why lifting heavy and staying active is the ultimate counter to the brutal physical demands of residency.', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80' },
-        { num: '03', title: 'Nutrition', desc: 'Fueling your body for 36-hour shifts without relying on hospital cafeteria junk.', img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80' },
-        { num: '04', title: 'Mindset', desc: 'Developing an unbreakable psychological baseline to handle stress, loss, and exhaustion.', img: 'https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?w=800&q=80' },
-        { num: '05', title: 'Finances', desc: 'Managing resident stipends, avoiding debt traps, and building long-term wealth early.', img: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80' },
-        { num: '06', title: 'Relationships & Social Wealth', desc: 'Keeping your personal life alive when the hospital demands everything from you.', img: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80' },
-        { num: '07', title: 'Clinical Efficiency', desc: 'How to work smarter, not harder on the wards. Master the unwritten rules of hospital workflow.', img: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&q=80' },
-        { num: '08', title: 'Mental Health', desc: 'Recognizing burnout and depression before they consume you. It is okay to not be okay.', img: 'https://images.unsplash.com/photo-1520694478166-daaaaec95b69?w=800&q=80' },
-        { num: '09', title: 'Depersonalization', desc: 'The silent crisis in modern medicine. Reconnecting with your humanity when you feel numb.', img: 'https://images.unsplash.com/photo-1494959764136-6be9eb3c261e?w=800&q=80' },
-        { num: '10', title: 'Building CV', desc: 'Strategically positioning yourself for fellowships, publications, and competitive opportunities.', img: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80' },
-        { num: '11', title: 'Sex Transmutation', desc: 'Channeling raw personal energy into intense focus, discipline, and professional excellence.', img: 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80' },
+        { num: '01', title: 'Introduction', desc: 'The transition from fresh MBBS to resident is a shock. Raw, unfiltered survival during those first brutal 36-hour shifts.', img: 'assets/toc/IMG-20260711-WA0008.jpg' },
+        { num: '02', title: 'Fitness', desc: 'Why lifting heavy and staying active is the ultimate counter to the brutal physical demands of residency.', img: 'assets/toc/2.jpg' },
+        { num: '03', title: 'Nutrition', desc: 'Fueling your body for 36-hour shifts without relying on hospital cafeteria junk.', img: 'assets/toc/3.jpg' },
+        { num: '04', title: 'Mindset', desc: 'Developing an unbreakable psychological baseline to handle stress, loss, and exhaustion.', img: 'assets/toc/4.jpg' },
+        { num: '05', title: 'Finances', desc: 'Managing resident stipends, avoiding debt traps, and building long-term wealth early.', img: 'assets/toc/5.jpg' },
+        { num: '06', title: 'Relationships & Social Wealth', desc: 'Keeping your personal life alive when the hospital demands everything from you.', img: 'assets/toc/6.jpg' },
+        { num: '07', title: 'Clinical Efficiency', desc: 'How to work smarter, not harder on the wards. Master the unwritten rules of hospital workflow.', img: 'assets/toc/7.jpg' },
+        { num: '08', title: 'Mental Health', desc: 'Recognizing burnout and depression before they consume you. It is okay to not be okay.', img: 'assets/toc/8.jpg' },
+        { num: '09', title: 'Depersonalization', desc: 'The silent crisis in modern medicine. Reconnecting with your humanity when you feel numb.', img: 'assets/toc/9.jpg' },
+        { num: '10', title: 'Building CV', desc: 'Strategically positioning yourself for fellowships, publications, and competitive opportunities.', img: 'assets/toc/10.jpg' },
+        { num: '11', title: 'Sex Transmutation', desc: 'Channeling raw personal energy into intense focus, discipline, and professional excellence.', img: 'assets/toc/11.jpg' },
         { num: '12', title: 'What to Expect from Residency?', desc: 'A pragmatic, no-nonsense look at the realities, politics, and triumphs of postgraduate training.', img: 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80' },
         { num: '13', title: 'The Only Good Habits That Matter', desc: 'Stripping away the noise to focus on the daily micro-habits that actually move the needle.', img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80' },
         { num: '14', title: 'Finale', desc: 'Looking back on the journey, leaving a legacy, and moving forward as a complete physician.', img: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=800&q=80' }
