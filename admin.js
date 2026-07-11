@@ -11,7 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
     const loginError = document.getElementById('login-error');
     const reviewsList = document.getElementById('admin-reviews-list');
+    const purchasesList = document.getElementById('admin-purchases-list');
     const logoutBtn = document.getElementById('logout-btn');
+    
+    // Tabs
+    const tabReviews = document.getElementById('tab-reviews');
+    const tabPurchases = document.getElementById('tab-purchases');
+    const reviewsView = document.getElementById('reviews-view');
+    const purchasesView = document.getElementById('purchases-view');
 
     // ── XSS Prevention Helper ──
     function escapeHTML(str) {
@@ -89,6 +96,25 @@ document.addEventListener('DOMContentLoaded', function() {
         loginSection.style.display = 'none';
         dashboardSection.style.display = 'block';
         loadReviews();
+        loadPurchases();
+    }
+    
+    // ── Tab Toggles ──
+    if (tabReviews && tabPurchases) {
+        tabReviews.addEventListener('click', () => {
+            reviewsView.style.display = 'block';
+            purchasesView.style.display = 'none';
+            tabReviews.className = 'login-btn';
+            tabPurchases.className = 'logout-btn';
+        });
+
+        tabPurchases.addEventListener('click', () => {
+            reviewsView.style.display = 'none';
+            purchasesView.style.display = 'block';
+            tabPurchases.className = 'login-btn';
+            tabReviews.className = 'logout-btn';
+            loadPurchases();
+        });
     }
 
     // ── Fetch and Render Reviews ──
@@ -177,5 +203,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+    }
+
+    // ── Fetch and Render Purchases ──
+    async function loadPurchases() {
+        if (!purchasesList) return;
+        purchasesList.innerHTML = '<p>Loading purchases...</p>';
+        
+        const { data, error } = await supabase
+            .from('purchases')
+            .select('*')
+            .order('created_at', { ascending: false });
+            
+        if (error) {
+            purchasesList.innerHTML = '<p style="color:red">Error loading purchases: ' + error.message + '</p>';
+            return;
+        }
+
+        if (!data || data.length === 0) {
+            purchasesList.innerHTML = '<p>No purchases found yet.</p>';
+            return;
+        }
+
+        let html = '<table style="width:100%; text-align:left; border-collapse:collapse; margin-top:1rem;">';
+        html += '<tr style="border-bottom:1px solid #444; color:#d4af37;"><th style="padding:10px;">Date</th><th style="padding:10px;">Name</th><th style="padding:10px;">Email</th><th style="padding:10px;">Status</th></tr>';
+        
+        data.forEach(p => {
+            let dateStr = new Date(p.created_at).toLocaleString('en-IN');
+            let color = p.status === 'paid' ? '#2ecc71' : '#e74c3c';
+            html += `<tr style="border-bottom:1px solid #333;">
+                <td style="padding:12px 10px; font-size:14px;">${dateStr}</td>
+                <td style="padding:12px 10px; font-size:14px; font-weight:600;">${escapeHTML(p.name)}</td>
+                <td style="padding:12px 10px; font-size:14px; color:#aaa;">${escapeHTML(p.email)}</td>
+                <td style="padding:12px 10px; font-size:14px; color:${color}; font-weight:bold;">${p.status.toUpperCase()}</td>
+            </tr>`;
+        });
+        
+        html += '</table>';
+        purchasesList.innerHTML = html;
     }
 });

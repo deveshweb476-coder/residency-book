@@ -183,8 +183,8 @@
 
     <div class="admin-container">
         <div class="admin-header">
-            <h1>Feedback Administration</h1>
-            <p>Manage book reviews from readers.</p>
+            <h1>Admin Dashboard</h1>
+            <p>Manage book reviews and view purchases.</p>
         </div>
 
         <!-- LOGIN SECTION -->
@@ -199,9 +199,24 @@
 
         <!-- DASHBOARD SECTION -->
         <div id="dashboard-section">
-            <input type="text" id="search-reviews" class="login-input" placeholder="Search comments by name..." style="margin-bottom: 2rem;">
-            <div id="admin-reviews-list">
-                <p>Loading reviews...</p>
+            <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                <button id="tab-reviews" class="login-btn" style="flex:1;">Reviews</button>
+                <button id="tab-purchases" class="logout-btn" style="flex:1; margin-top:0;">Purchases</button>
+            </div>
+
+            <!-- REVIEWS TAB -->
+            <div id="reviews-view">
+                <input type="text" id="search-reviews" class="login-input" placeholder="Search comments by name..." style="margin-bottom: 2rem;">
+                <div id="admin-reviews-list">
+                    <p>Loading reviews...</p>
+                </div>
+            </div>
+
+            <!-- PURCHASES TAB -->
+            <div id="purchases-view" style="display: none;">
+                <div id="admin-purchases-list">
+                    <p>Loading purchases...</p>
+                </div>
             </div>
             
             <button id="logout-btn" class="logout-btn">Log Out</button>
