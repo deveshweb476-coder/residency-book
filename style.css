@@ -1263,7 +1263,7 @@ body {
 /* ============================================================
    MOBILE RESPONSIVE OVERHAUL — max-width: 767px
    ============================================================ */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
 
     /* ── NAVBAR ── */
     .navbar { padding: 16px 20px; }
