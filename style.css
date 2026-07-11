@@ -500,7 +500,7 @@ body {
     position: relative;
     z-index: 1;
 }
-.s2a-dual-cards {
+.s2a-quad-cards {
     position: relative;
     width: 100%;
     height: 600px;
@@ -513,26 +513,28 @@ body {
     height: 550px;
     width: 390px;
     border-radius: 16px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
     object-fit: cover;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
 }
-.s2a-card-back {
-    transform: rotate(-6deg) translateX(40px);
-    z-index: 1;
-}
-.s2a-card-front {
-    transform: rotate(6deg) translateX(-40px);
-    z-index: 2;
-}
-.s2a-card-back:hover {
-    transform: translateY(-15px) rotate(-4deg) translateX(40px);
-    box-shadow: 0 35px 70px rgba(0,0,0,0.45);
-    z-index: 3;
-}
-.s2a-card-front:hover {
-    transform: translateY(-15px) rotate(4deg) translateX(-40px);
-    box-shadow: 0 35px 70px rgba(0,0,0,0.45);
+
+/* Default stacked state */
+.s2a-card-4 { transform: rotate(-6deg) translateX(-15px); z-index: 1; }
+.s2a-card-3 { transform: rotate(-2deg) translateX(-5px); z-index: 2; }
+.s2a-card-2 { transform: rotate(2deg) translateX(5px); z-index: 3; }
+.s2a-card-1 { transform: rotate(6deg) translateX(15px); z-index: 4; }
+
+/* Fan out on hover */
+.s2a-quad-cards:hover .s2a-card-4 { transform: rotate(-15deg) translateX(-120px) translateY(20px); }
+.s2a-quad-cards:hover .s2a-card-3 { transform: rotate(-5deg) translateX(-40px) translateY(10px); }
+.s2a-quad-cards:hover .s2a-card-2 { transform: rotate(5deg) translateX(40px) translateY(10px); }
+.s2a-quad-cards:hover .s2a-card-1 { transform: rotate(15deg) translateX(120px) translateY(20px); }
+
+/* Pop up specific hovered card */
+.s2a-quad-cards .s2a-card:hover {
+    transform: translateY(-20px) scale(1.05) !important;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    z-index: 10;
 }
 
 /* PANEL B (Dark Navy) */
@@ -1328,13 +1330,18 @@ body {
         width: 100%;
         padding: 0 24px 48px;
     }
-    .s2a-dual-cards {
+    .s2a-quad-cards {
         height: 320px;
     }
     .s2a-card {
         height: 280px;
         width: 200px;
     }
+    /* Fan out less on mobile due to smaller screen */
+    .s2a-quad-cards:hover .s2a-card-4 { transform: rotate(-12deg) translateX(-60px) translateY(10px); }
+    .s2a-quad-cards:hover .s2a-card-3 { transform: rotate(-4deg) translateX(-20px) translateY(5px); }
+    .s2a-quad-cards:hover .s2a-card-2 { transform: rotate(4deg) translateX(20px) translateY(5px); }
+    .s2a-quad-cards:hover .s2a-card-1 { transform: rotate(12deg) translateX(60px) translateY(10px); }
     .s2a-cta-row { flex-wrap: wrap; gap: 12px; }
 
     /* ── SECTION 2B: TABLE OF CONTENTS ── */
@@ -1482,7 +1489,7 @@ body {
     .nav-links a { font-size: 0.55rem; }
     .s2a-heading { font-size: 2rem; }
     .s2a-card { height: 230px; width: 160px; }
-    .s2a-dual-cards { height: 260px; }
+    .s2a-quad-cards { height: 260px; }
     .author-heading { font-size: 1.7rem; }
     .flip-gallery-container { width: 180px; height: 273px; }
     .flip-gallery-container .unite { background-size: 180px 273px; }
