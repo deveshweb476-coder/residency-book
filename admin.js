@@ -226,16 +226,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         let html = '<table style="width:100%; text-align:left; border-collapse:collapse; margin-top:1rem;">';
-        html += '<tr style="border-bottom:1px solid #444; color:#d4af37;"><th style="padding:10px;">Date</th><th style="padding:10px;">Name</th><th style="padding:10px;">Email</th><th style="padding:10px;">Status</th></tr>';
+        html += '<tr style="border-bottom:1px solid #444; color:#d4af37;"><th style="padding:10px;">Date</th><th style="padding:10px;">Name</th><th style="padding:10px;">Email</th><th style="padding:10px;">Order ID / Payment ID</th><th style="padding:10px;">Status</th></tr>';
         
         data.forEach(p => {
             let dateStr = new Date(p.created_at).toLocaleString('en-IN');
             let color = p.status === 'paid' ? '#2ecc71' : '#e74c3c';
+            let rzpOrder = p.razorpay_order_id ? escapeHTML(p.razorpay_order_id) : 'N/A';
+            let rzpPayment = p.razorpay_payment_id ? escapeHTML(p.razorpay_payment_id) : 'Pending';
+
             html += `<tr style="border-bottom:1px solid #333;">
-                <td style="padding:12px 10px; font-size:14px;">${dateStr}</td>
-                <td style="padding:12px 10px; font-size:14px; font-weight:600;">${escapeHTML(p.name)}</td>
-                <td style="padding:12px 10px; font-size:14px; color:#aaa;">${escapeHTML(p.email)}</td>
-                <td style="padding:12px 10px; font-size:14px; color:${color}; font-weight:bold;">${p.status.toUpperCase()}</td>
+                <td style="padding:12px 10px; font-size:14px; vertical-align:top;">${dateStr}</td>
+                <td style="padding:12px 10px; font-size:14px; font-weight:600; vertical-align:top;">${escapeHTML(p.name)}</td>
+                <td style="padding:12px 10px; font-size:14px; color:#aaa; vertical-align:top;">${escapeHTML(p.email)}</td>
+                <td style="padding:12px 10px; font-size:12px; color:#aaa; vertical-align:top;">Order: ${rzpOrder}<br>Pay: ${rzpPayment}</td>
+                <td style="padding:12px 10px; font-size:14px; color:${color}; font-weight:bold; vertical-align:top;">${p.status.toUpperCase()}</td>
             </tr>`;
         });
         
