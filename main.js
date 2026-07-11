@@ -123,7 +123,7 @@ window.addEventListener('scroll', function () {
     var lastHoveredIndex = 0; // The first item is active by default
 
     var chapterData = [
-        { num: '01', title: 'Introduction', desc: 'The transition from fresh MBBS to resident is a shock. Raw, unfiltered survival during those first brutal 36-hour shifts.', img: 'assets/toc/IMG-20260711-WA0008.jpg' },
+        { num: '01', title: 'Introduction', desc: 'The transition from fresh MBBS to resident is a shock. Raw, unfiltered survival during those first brutal 36-hour shifts.', img: 'assets/toc/1.jpeg' },
         { num: '02', title: 'Fitness', desc: 'Why lifting heavy and staying active is the ultimate counter to the brutal physical demands of residency.', img: 'assets/toc/2.jpg' },
         { num: '03', title: 'Nutrition', desc: 'Fueling your body for 36-hour shifts without relying on hospital cafeteria junk.', img: 'assets/toc/3.jpg' },
         { num: '04', title: 'Mindset', desc: 'Developing an unbreakable psychological baseline to handle stress, loss, and exhaustion.', img: 'assets/toc/4.jpg' },
