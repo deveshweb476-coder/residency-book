@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "jsdom": "^29.1.1"
+    "@supabase/supabase-js": "^2.110.2",
+    "jsdom": "^29.1.1",
+    "razorpay": "^2.9.6",
+    "resend": "^6.17.2"
   }
 }
