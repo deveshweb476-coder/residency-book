@@ -134,7 +134,7 @@ window.addEventListener('scroll', function () {
         { num: '09', title: 'Depersonalization', desc: 'The silent crisis in modern medicine. Reconnecting with your humanity when you feel numb.', img: 'assets/toc/9.jpg' },
         { num: '10', title: 'Building CV', desc: 'Strategically positioning yourself for fellowships, publications, and competitive opportunities.', img: 'assets/toc/10.jpg' },
         { num: '11', title: 'Sex Transmutation', desc: 'Channeling raw personal energy into intense focus, discipline, and professional excellence.', img: 'assets/toc/11.jpg' },
-        { num: '12', title: 'What to Expect from Residency?', desc: 'A pragmatic, no-nonsense look at the realities, politics, and triumphs of postgraduate training.', img: 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80' },
+        { num: '12', title: 'What to Expect from Residency?', desc: 'A pragmatic, no-nonsense look at the realities, politics, and triumphs of postgraduate training.', img: 'assets/toc/12.jpeg' },
         { num: '13', title: 'The Only Good Habits That Matter', desc: 'Stripping away the noise to focus on the daily micro-habits that actually move the needle.', img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80' },
         { num: '14', title: 'Finale', desc: 'Looking back on the journey, leaving a legacy, and moving forward as a complete physician.', img: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=800&q=80' }
     ];
