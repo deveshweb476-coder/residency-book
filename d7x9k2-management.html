@@ -184,7 +184,7 @@
     <div class="admin-container">
         <div class="admin-header">
             <h1>Admin Dashboard</h1>
-            <p>Manage book reviews and view purchases.</p>
+            <p>Manage reviews, purchases, and book settings.</p>
         </div>
 
         <!-- LOGIN SECTION -->
@@ -199,9 +199,11 @@
 
         <!-- DASHBOARD SECTION -->
         <div id="dashboard-section">
-            <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+            <!-- TAB BUTTONS -->
+            <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
                 <button id="tab-reviews" class="login-btn" style="flex:1;">Reviews</button>
                 <button id="tab-purchases" class="logout-btn" style="flex:1; margin-top:0;">Purchases</button>
+                <button id="tab-settings" class="logout-btn" style="flex:1; margin-top:0;">⚙ Settings</button>
             </div>
 
             <!-- REVIEWS TAB -->
@@ -218,6 +220,24 @@
                     <p>Loading purchases...</p>
                 </div>
             </div>
+
+            <!-- SETTINGS TAB -->
+            <div id="settings-view" style="display: none;">
+                <h3 style="color:#D4AF37; margin-bottom:1.5rem;">Book Price Settings</h3>
+                <div style="background:#2c2c2c; padding:2rem; border-radius:8px; border:1px solid #444;">
+                    <label style="display:block; color:#aaa; font-size:13px; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Book Price (₹)</label>
+                    <div style="display:flex; gap:1rem; align-items:center;">
+                        <input type="number" id="price-input" class="login-input"
+                               placeholder="299" min="1" max="99999"
+                               style="margin-bottom:0; flex:1; font-size:1.5rem; font-weight:bold;">
+                        <button id="save-price-btn" class="login-btn" style="width:auto; padding:12px 24px;">Save Price</button>
+                    </div>
+                    <p id="price-status" style="margin-top:1rem; font-size:14px;"></p>
+                    <p style="color:#666; font-size:12px; margin-top:1rem;">
+                        ℹ️ This price is used live on Razorpay checkout. Change here and it takes effect immediately — no code changes needed.
+                    </p>
+                </div>
+            </div>
             
             <button id="logout-btn" class="logout-btn">Log Out</button>
         </div>
@@ -225,6 +245,6 @@
 
     <!-- Supabase and Admin JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="admin.js?v=2"></script>
+    <script src="admin.js?v=3"></script>
 </body>
 </html>

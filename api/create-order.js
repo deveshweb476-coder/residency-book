@@ -21,16 +21,29 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const amount = 29900; // INR 299 in paise
-    
+    // ── Fetch live price from Supabase settings table ──
+    let amount = 29900; // Fallback default: ₹299 in paise
+    const { data: settingsData } = await supabase
+      .from('settings')
+      .select('value')
+      .eq('key', 'book_price')
+      .single();
+
+    if (settingsData && settingsData.value) {
+      const parsed = parseInt(settingsData.value, 10);
+      if (!isNaN(parsed) && parsed > 0) {
+        amount = parsed; // Value stored in paise (e.g. 29900 = ₹299)
+      }
+    }
+
     const options = {
-      amount: amount, 
-      currency: "INR",
+      amount: amount,
+      currency: 'INR',
       receipt: `receipt_${Date.now()}`
     };
     const order = await razorpay.orders.create(options);
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('purchases')
       .insert([
         {
@@ -46,7 +59,11 @@ module.exports = async (req, res) => {
       return res.status(500).json({ error: 'Failed to record purchase intent' });
     }
 
-    res.status(200).json({ orderId: order.id, amount: options.amount, key_id: process.env.RAZORPAY_KEY_ID });
+    res.status(200).json({
+      orderId: order.id,
+      amount: options.amount,
+      key_id: process.env.RAZORPAY_KEY_ID
+    });
   } catch (error) {
     console.error('Razorpay/Server error:', error);
     res.status(500).json({ error: 'Failed to create order' });

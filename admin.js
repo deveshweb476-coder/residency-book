@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Tabs
     const tabReviews = document.getElementById('tab-reviews');
     const tabPurchases = document.getElementById('tab-purchases');
+    const tabSettings = document.getElementById('tab-settings');
     const reviewsView = document.getElementById('reviews-view');
     const purchasesView = document.getElementById('purchases-view');
+    const settingsView = document.getElementById('settings-view');
 
     // ── XSS Prevention Helper ──
     function escapeHTML(str) {
@@ -101,20 +103,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ── Tab Toggles ──
     if (tabReviews && tabPurchases) {
+        function setActiveTab(activeBtn, activeView) {
+            // Reset all tabs
+            [tabReviews, tabPurchases, tabSettings].forEach(b => { if (b) b.className = 'logout-btn'; });
+            [reviewsView, purchasesView, settingsView].forEach(v => { if (v) v.style.display = 'none'; });
+            // Set active
+            activeBtn.className = 'login-btn';
+            activeView.style.display = 'block';
+        }
+
         tabReviews.addEventListener('click', () => {
-            reviewsView.style.display = 'block';
-            purchasesView.style.display = 'none';
-            tabReviews.className = 'login-btn';
-            tabPurchases.className = 'logout-btn';
+            setActiveTab(tabReviews, reviewsView);
         });
 
         tabPurchases.addEventListener('click', () => {
-            reviewsView.style.display = 'none';
-            purchasesView.style.display = 'block';
-            tabPurchases.className = 'login-btn';
-            tabReviews.className = 'logout-btn';
+            setActiveTab(tabPurchases, purchasesView);
             loadPurchases();
         });
+
+        if (tabSettings) {
+            tabSettings.addEventListener('click', () => {
+                setActiveTab(tabSettings, settingsView);
+                loadSettings();
+            });
+        }
     }
 
     // ── Fetch and Render Reviews ──
@@ -245,5 +257,65 @@ document.addEventListener('DOMContentLoaded', function() {
         
         html += '</table>';
         purchasesList.innerHTML = html;
+    }
+    // ── Load + Save Settings (Book Price) ──
+    async function loadSettings() {
+        const priceInput = document.getElementById('price-input');
+        const priceStatus = document.getElementById('price-status');
+        if (!priceInput) return;
+
+        priceStatus.textContent = 'Loading current price...';
+        priceStatus.style.color = '#aaa';
+
+        const { data, error } = await supabase
+            .from('settings')
+            .select('value')
+            .eq('key', 'book_price')
+            .single();
+
+        if (error || !data) {
+            priceStatus.textContent = 'Could not load current price. Make sure the settings table exists in Supabase.';
+            priceStatus.style.color = '#e74c3c';
+            return;
+        }
+
+        // Value is stored in paise — display in rupees
+        priceInput.value = Math.round(parseInt(data.value) / 100);
+        priceStatus.textContent = `Current price: ₹${priceInput.value}`;
+        priceStatus.style.color = '#2ecc71';
+    }
+
+    const savePriceBtn = document.getElementById('save-price-btn');
+    if (savePriceBtn) {
+        savePriceBtn.addEventListener('click', async () => {
+            const priceInput = document.getElementById('price-input');
+            const priceStatus = document.getElementById('price-status');
+            const rupees = parseInt(priceInput.value);
+
+            if (isNaN(rupees) || rupees < 1) {
+                priceStatus.textContent = 'Please enter a valid price.';
+                priceStatus.style.color = '#e74c3c';
+                return;
+            }
+
+            const paise = rupees * 100; // Convert ₹ to paise for Razorpay
+            savePriceBtn.disabled = true;
+            savePriceBtn.textContent = 'Saving...';
+
+            const { error } = await supabase
+                .from('settings')
+                .upsert({ key: 'book_price', value: String(paise), updated_at: new Date().toISOString() });
+
+            savePriceBtn.disabled = false;
+            savePriceBtn.textContent = 'Save Price';
+
+            if (error) {
+                priceStatus.textContent = 'Error saving price: ' + error.message;
+                priceStatus.style.color = '#e74c3c';
+            } else {
+                priceStatus.textContent = `✅ Price updated to ₹${rupees}. Live immediately on next checkout!`;
+                priceStatus.style.color = '#2ecc71';
+            }
+        });
     }
 });
