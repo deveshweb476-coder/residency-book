@@ -651,6 +651,18 @@ document.addEventListener('DOMContentLoaded', () => {
         formStep.style.display = 'block';
         successStep.style.display = 'none';
         checkoutForm.reset();
+        btnProceed.textContent = 'Proceed to Payment';
+        
+        // Fetch dynamic price
+        fetch('/api/get-price')
+            .then(res => res.json())
+            .then(data => {
+                if (data.price) {
+                    btnProceed.textContent = `Proceed to Payment (₹${data.price})`;
+                }
+            })
+            .catch(err => console.error('Failed to fetch price:', err));
+
         checkoutOverlay.classList.add('active');
     }
     
@@ -698,7 +710,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(data.error || 'Failed to create order');
             }
             
-            // 2. Open Razorpay
+            // 2. Open Razorpay or show download if already paid
+            if (data.alreadyPaid) {
+                // Show success step directly
+                formStep.style.display = 'none';
+                successStep.style.display = 'block';
+                const successTitle = successStep.querySelector('h2');
+                if (successTitle) successTitle.textContent = 'Already Purchased!';
+                const successDesc = successStep.querySelector('p');
+                if (successDesc) successDesc.textContent = 'You have already purchased this e-book. You can download it below.';
+                document.getElementById('direct-download-link').href = data.downloadLink;
+                return;
+            }
+
             const options = {
                 key: data.key_id, // Pulled from the backend securely
                 amount: data.amount,
@@ -730,12 +754,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else {
                             alert('Payment verification failed. If money was deducted, please contact support.');
                             btnProceed.disabled = false;
-                            btnProceed.textContent = 'Proceed to Payment (₹299)';
+                            btnProceed.textContent = 'Proceed to Payment';
                         }
                     } catch (err) {
                         alert('Error verifying payment.');
                         btnProceed.disabled = false;
-                        btnProceed.textContent = 'Proceed to Payment (₹299)';
+                        btnProceed.textContent = 'Proceed to Payment';
                     }
                 },
                 prefill: {
@@ -753,14 +777,14 @@ document.addEventListener('DOMContentLoaded', () => {
             rzp.on('payment.failed', function (response){
                 alert('Payment failed: ' + response.error.description);
                 btnProceed.disabled = false;
-                btnProceed.textContent = 'Proceed to Payment (₹299)';
+                btnProceed.textContent = 'Proceed to Payment';
             });
             rzp.open();
             
         } catch (error) {
             alert('Error: ' + error.message);
             btnProceed.disabled = false;
-            btnProceed.textContent = 'Proceed to Payment (₹299)';
+            btnProceed.textContent = 'Proceed to Payment';
         }
     });
 });

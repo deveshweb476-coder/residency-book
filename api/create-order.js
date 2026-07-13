@@ -36,12 +36,30 @@ module.exports = async (req, res) => {
       }
     }
 
+    // ── Check if already paid ──
+    const { data: existingPurchase } = await supabase
+      .from('purchases')
+      .select('status')
+      .eq('email', email)
+      .eq('status', 'paid')
+      .limit(1)
+      .single();
+
+    if (existingPurchase && existingPurchase.status === 'paid') {
+      const BOOK_LINK = process.env.CLOUDINARY_BOOK_URL || 'https://placeholder-cloudinary-link.pdf';
+      return res.status(200).json({
+        alreadyPaid: true,
+        downloadLink: BOOK_LINK
+      });
+    }
+
     const options = {
       amount: amount,
       currency: 'INR',
       receipt: `receipt_${Date.now()}`
     };
     const order = await razorpay.orders.create(options);
+
 
     const { error } = await supabase
       .from('purchases')
