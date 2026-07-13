@@ -95,10 +95,12 @@ module.exports = async (req, res) => {
 </html>`
       };
 
-      transporter.sendMail(mailOptions, (err, info) => {
-        if (err) console.error('Email error:', err);
-        else console.log('Email sent:', info.response);
-      });
+      try {
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Email sent:', info.response);
+      } catch (err) {
+        console.error('Email error:', err);
+      }
     }
 
     // 4. Return success with download link
