@@ -34,11 +34,24 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://checkout.razorpay.com https://js.sentry-cdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://res.cloudinary.com; connect-src 'self' https://tjhtplbngkyziktmdmer.supabase.co https://api.razorpay.com https://sentry.io; frame-src https://api.razorpay.com;"
         }
       ]
     },
     {
-      "source": "/(.*)\\.(css|js|png|jpg|jpeg|gif|ico|svg|woff2)",
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(?:css|js|png|jpg|jpeg|gif|ico|svg|woff2)",
       "headers": [
         {
           "key": "Cache-Control",
