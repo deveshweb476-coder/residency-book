@@ -46,7 +46,7 @@ module.exports = async (req, res) => {
       .single();
 
     if (existingPurchase && existingPurchase.status === 'paid') {
-      const BOOK_LINK = process.env.BOOK_DOWNLOAD_URL || 'https://drive.google.com/uc?export=download&id=1WvL6vITxFZHLpE1hyrrQ0xi3YlwjDAJp';
+      const BOOK_LINK = process.env.BOOK_DOWNLOAD_URL; // Must be set in Vercel Environment Variables
       return res.status(200).json({
         alreadyPaid: true,
         downloadLink: BOOK_LINK

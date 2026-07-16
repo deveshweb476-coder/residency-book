@@ -6,7 +6,7 @@ const supabaseUrl = process.env.SUPABASE_URL || 'https://tjhtplbngkyziktmdmer.su
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const BOOK_LINK = process.env.BOOK_DOWNLOAD_URL || 'https://drive.google.com/uc?export=download&id=1WvL6vITxFZHLpE1hyrrQ0xi3YlwjDAJp';
+const BOOK_LINK = process.env.BOOK_DOWNLOAD_URL; // Must be set in Vercel Environment Variables
 
 // Setup Nodemailer transporter using Vercel environment variables
 const transporter = nodemailer.createTransport({
