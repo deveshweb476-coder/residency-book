@@ -16,5 +16,5 @@ def extract_pdf_pages(pdf_path, pages):
 
 if __name__ == "__main__":
     pdf_file = "d:/dr.devesh/table of conetent/The Art Of Residency.pdf"
-    # Extract pages 187 and 202 (0-indexed 186, 201)
-    extract_pdf_pages(pdf_file, [186, 201])
+    # Extract front cover (0-indexed 0)
+    extract_pdf_pages(pdf_file, [0])

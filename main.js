@@ -246,7 +246,21 @@ window.addEventListener('scroll', function () {
             once: true
         }
     });
+
+    gsap.to('.hpb-book-wrap', {
+        opacity: 1,
+        y: 0,
+        rotationY: -12,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: '.hero-panel-bottom',
+            start: 'top 80%',
+            once: true
+        }
+    });
 })();
+
 
 (function extraSectionsAnim() {
     if (!window.gsap || !window.ScrollTrigger) return;
