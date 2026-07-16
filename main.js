@@ -801,3 +801,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() { document.querySelectorAll('.hpb-book-wrap').forEach(function(wrap) { wrap.addEventListener('mouseenter', function() { if (window.gsap) { gsap.to(wrap, { rotationY: -5, scale: 1.05, y: -10, duration: 0.4, ease: 'power2.out' }); } }); wrap.addEventListener('mouseleave', function() { if (window.gsap) { gsap.to(wrap, { rotationY: -12, scale: 1, y: 0, duration: 0.4, ease: 'power2.out' }); } }); }); document.querySelectorAll('.footer-book-cover img').forEach(function(img) { img.addEventListener('mouseenter', function() { if (window.gsap) { gsap.to(img, { scale: 1.1, y: -10, rotationZ: 2, duration: 0.4, ease: 'back.out(1.7)' }); } }); img.addEventListener('mouseleave', function() { if (window.gsap) { gsap.to(img, { scale: 1, y: 0, rotationZ: 0, duration: 0.4, ease: 'power2.out' }); } }); }); });

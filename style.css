@@ -310,9 +310,6 @@ body {
     opacity: 0;
     transition: transform 0.6s ease;
 }
-.hpb-book-wrap:hover {
-    transform: perspective(800px) rotateY(-5deg) scale(1.04);
-}
 .hpb-book-img {
     width: 100%;
     display: block;
@@ -1091,7 +1088,8 @@ body {
 .footer-top { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; margin-bottom: 60px; flex-wrap: wrap; }
 .footer-col { flex: 1; min-width: 250px; }
 .brand-col { flex: 2; }
-.footer-book-cover img { height: 120px; border-radius: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); margin-bottom: 20px; }
+.footer-book-cover { cursor: pointer; }
+.footer-book-cover img { height: 160px; width: auto; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); margin-bottom: 20px; }
 .footer-name { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 5px; color: var(--ink); }
 .footer-name em { color: var(--gold); font-style: italic; }
 .footer-tagline { color: var(--ink-mid); font-size: 0.95rem; }
