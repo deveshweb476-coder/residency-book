@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://residency-book.vercel.app/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://residency-book.vercel.app/book-cover.png</image:loc>
+      <image:title>Redefining Residency Life In Your Own Terms - Book Cover</image:title>
+    </image:image>
+  </url>
+</urlset>

@@ -62,6 +62,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Feedback Admin - Dr. Devesh</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -208,7 +209,7 @@
 
             <!-- REVIEWS TAB -->
             <div id="reviews-view">
-                <input type="text" id="search-reviews" class="login-input" placeholder="Search comments by name..." style="margin-bottom: 2rem;">
+                <input type="text" id="search-reviews" class="login-input" placeholder="Search comments by name..." style="margin-bottom: 2rem;" autocomplete="off">
                 <div id="admin-reviews-list">
                     <p>Loading reviews...</p>
                 </div>
@@ -229,7 +230,7 @@
                     <div style="display:flex; gap:1rem; align-items:center;">
                         <input type="number" id="price-input" class="login-input"
                                placeholder="299" min="1" max="99999"
-                               style="margin-bottom:0; flex:1; font-size:1.5rem; font-weight:bold;">
+                               style="margin-bottom:0; flex:1; font-size:1.5rem; font-weight:bold;" autocomplete="off">
                         <button id="save-price-btn" class="login-btn" style="width:auto; padding:12px 24px;">Save Price</button>
                     </div>
                     <p id="price-status" style="margin-top:1rem; font-size:14px;"></p>

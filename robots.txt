@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /d7x9k2-management.html
+Disallow: /admin
+
+Sitemap: https://residency-book.vercel.app/sitemap.xml
