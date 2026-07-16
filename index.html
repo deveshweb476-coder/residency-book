@@ -958,7 +958,7 @@
             <button class="modal-close" id="btnCheckoutClose">&times;</button>
             <div id="checkout-form-step">
                 <h2 style="font-family: var(--font-serif); color: var(--gold); margin-bottom: 10px; font-size: 2rem;">Get the E-Book</h2>
-                <p style="margin-bottom: 25px; font-size: 0.95rem; color: #aaa;">Please enter your details. The book download link will be emailed to you securely.</p>
+                <p style="margin-bottom: 25px; font-size: 0.95rem; color: #aaa; line-height: 1.5;">Please enter your details. The book download link will be emailed to you securely.<br><br><span style="color: #D4AF37;"><strong>Note:</strong> If you've already paid, simply re-enter your email to access your download link again without paying.</span></p>
                 <form id="checkoutForm" style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
                     <div>
                         <label for="buyerName" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #fff;">Full Name</label>
@@ -978,6 +978,9 @@
                 <p style="margin-bottom: 25px; font-size: 1rem; color: #fff;">Thank you for your purchase. An email has been sent to your address with the book.</p>
                 <div style="background: rgba(74, 222, 128, 0.1); padding: 20px; border-radius: 8px; border: 1px solid rgba(74, 222, 128, 0.3);">
                     <p style="margin-bottom: 15px; color: #eee; font-size: 0.9rem;">You can also download it right now using the secure link below. Please save it to your device.</p>
+                    <div style="background: rgba(212, 175, 55, 0.1); padding: 15px; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 4px; margin-bottom: 20px; font-size: 0.85rem; color: #ccc; text-align: left;">
+                        <strong style="color: #D4AF37;">Important Note:</strong> Because this is a high-quality E-Book, Google Drive may show a <em>"File is too large to scan for viruses"</em> warning. Simply click <strong>"Download anyway"</strong> on that page to save your PDF safely!
+                    </div>
                     <a href="#" id="direct-download-link" target="_blank" rel="noopener" style="display: inline-block; background: #4ade80; color: #000; text-decoration: none; padding: 12px 25px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; border-radius: 4px;">Download E-Book Now</a>
                 </div>
             </div>
