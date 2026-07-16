@@ -732,7 +732,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (successTitle) successTitle.textContent = 'Already Purchased!';
                 const successDesc = successStep.querySelector('p');
                 if (successDesc) successDesc.textContent = 'You have already purchased this e-book. You can download it below.';
-                document.getElementById('direct-download-link').href = data.downloadLink;
+                if (!data.downloadLink) {
+                    alert('Configuration Error: Download link is missing. Please check Vercel environment variables.');
+                } else {
+                    document.getElementById('direct-download-link').href = data.downloadLink;
+                }
                 return;
             }
 
@@ -763,7 +767,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             // Show success step
                             formStep.style.display = 'none';
                             successStep.style.display = 'block';
-                            document.getElementById('direct-download-link').href = verifyData.downloadLink;
+                            if (!verifyData.downloadLink) {
+                                alert('Configuration Error: Download link is missing. Please check Vercel environment variables.');
+                            } else {
+                                document.getElementById('direct-download-link').href = verifyData.downloadLink;
+                            }
                         } else {
                             alert('Payment verification failed. If money was deducted, please contact support.');
                             btnProceed.disabled = false;
