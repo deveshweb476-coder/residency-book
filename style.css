@@ -700,7 +700,7 @@ body {
 
 .s2b-chapter-photo-frame {
     width: 100%;
-    height: 400px;
+    height: 500px;
     margin: 0 0 20px 0;
     border-radius: 4px;
     overflow: hidden;
@@ -1202,13 +1202,13 @@ body {
 
 /* Every Chapter Built For You Section */
 .s2b-features-section {
-    margin-top: 40px;
+    margin-top: 60px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    padding: 24px;
+    padding: 18px;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     z-index: 2;
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -1217,9 +1217,9 @@ body {
 }
 .s2b-features-title {
     color: #fff;
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 22px;
+    margin-bottom: 16px;
     letter-spacing: -0.01em;
     font-family: 'Inter', sans-serif;
     margin-top: 0;
@@ -1235,11 +1235,14 @@ body {
 .s2b-feature-item {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
+    margin-bottom: 16px;
+}
+.s2b-feature-item:last-child {
+    margin-bottom: 0;
 }
 .s2b-feature-icon {
-    width: 44px;
-    height: 44px;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
     border-radius: 50%;
     background: rgba(212, 175, 55, 0.08);
@@ -1248,6 +1251,7 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--gold);
+    margin-right: 12px;
 }
 .s2b-feature-icon svg {
     width: 20px;
@@ -1260,16 +1264,19 @@ body {
     margin-top: 2px;
 }
 .s2b-feature-head {
+    display: block;
     color: #fff;
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     font-family: 'Playfair Display', serif;
     letter-spacing: 0.03em;
+    margin-bottom: 4px;
 }
 .s2b-feature-desc {
+    display: block;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.88rem;
-    line-height: 1.45;
+    font-size: 0.8rem;
+    line-height: 1.4;
     font-family: 'Inter', sans-serif;
 }
 
