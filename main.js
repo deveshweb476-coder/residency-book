@@ -29,9 +29,9 @@ window.addEventListener('scroll', function () {
         'https://images.unsplash.com/photo-1551076805-e1869033e561?w=300&q=60&fit=crop',
         'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&q=60&fit=crop',
         'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=300&q=60&fit=crop',
-        'book-cover.png',
-        'book-cover.png',
-        'book-cover.png'
+        'toc-page1.jpg',
+        'toc-page1.jpg',
+        'toc-page1.jpg'
     ];
 
     // 7 cols × 4 rows = 28 tiles
