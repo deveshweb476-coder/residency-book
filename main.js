@@ -664,17 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formStep.style.display = 'block';
         successStep.style.display = 'none';
         checkoutForm.reset();
-        btnProceed.textContent = 'Proceed to Payment';
-        
-        // Fetch dynamic price
-        fetch('/api/get-price')
-            .then(res => res.json())
-            .then(data => {
-                if (data.price) {
-                    btnProceed.textContent = `Proceed to Payment (₹${data.price})`;
-                }
-            })
-            .catch(err => console.error('Failed to fetch price:', err));
+        btnProceed.textContent = 'Get Free E-Book (First 500)';
 
         checkoutOverlay.classList.add('active');
     }
@@ -710,8 +700,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btnProceed.textContent = 'Processing...';
         
         try {
-            // 1. Create order
-            const res = await fetch('/api/create-order', {
+            // BYPASS PAYMENT FOR NOW -> Free promotion
+            const res = await fetch('/api/send-free-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email })
@@ -720,92 +710,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await res.json();
             
             if (!res.ok) {
-                throw new Error(data.error || 'Failed to create order');
+                throw new Error(data.error || 'Failed to process request');
             }
             
-            // 2. Open Razorpay or show download if already paid
-            if (data.alreadyPaid) {
-                // Show success step directly
-                formStep.style.display = 'none';
-                successStep.style.display = 'block';
-                const successTitle = successStep.querySelector('h2');
-                if (successTitle) successTitle.textContent = 'Already Purchased!';
-                const successDesc = successStep.querySelector('p');
-                if (successDesc) successDesc.textContent = 'You have already purchased this e-book. You can download it below.';
-                if (!data.downloadLink) {
-                    alert('Configuration Error: Download link is missing. Please check Vercel environment variables.');
-                } else {
-                    document.getElementById('direct-download-link').href = data.downloadLink;
-                }
-                return;
-            }
-
-            const options = {
-                key: data.key_id, // Pulled from the backend securely
-                amount: data.amount,
-                currency: "INR",
-                name: "Dr. Devesh Bhargude",
-                description: "Redefining Residency Life In Your Own Terms",
-                order_id: data.orderId,
-                handler: async function (response) {
-                    btnProceed.textContent = 'Verifying...';
-                    // 3. Verify payment
-                    try {
-                        const verifyRes = await fetch('/api/verify-payment', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                razorpay_order_id: response.razorpay_order_id,
-                                razorpay_payment_id: response.razorpay_payment_id,
-                                razorpay_signature: response.razorpay_signature
-                            })
-                        });
-                        
-                        const verifyData = await verifyRes.json();
-                        
-                        if (verifyRes.ok && verifyData.success) {
-                            // Show success step
-                            formStep.style.display = 'none';
-                            successStep.style.display = 'block';
-                            if (!verifyData.downloadLink) {
-                                alert('Configuration Error: Download link is missing. Please check Vercel environment variables.');
-                            } else {
-                                document.getElementById('direct-download-link').href = verifyData.downloadLink;
-                            }
-                        } else {
-                            alert('Payment verification failed. If money was deducted, please contact support.');
-                            btnProceed.disabled = false;
-                            btnProceed.textContent = 'Proceed to Payment';
-                        }
-                    } catch (err) {
-                        alert('Error verifying payment.');
-                        btnProceed.disabled = false;
-                        btnProceed.textContent = 'Proceed to Payment';
-                    }
-                },
-                prefill: {
-                    name: name,
-                    email: email
-                },
-                theme: {
-                    color: "#D4AF37"
-                }
-            };
+            // Show success step directly
+            formStep.style.display = 'none';
+            successStep.style.display = 'block';
             
-            // Note: We need to pull Razorpay key from somewhere. For now, it will fail until the user provides it.
-            // Ideally we fetch it from a non-secret endpoint or inject it.
-            const rzp = new window.Razorpay(options);
-            rzp.on('payment.failed', function (response){
-                alert('Payment failed: ' + response.error.description);
-                btnProceed.disabled = false;
-                btnProceed.textContent = 'Proceed to Payment';
-            });
-            rzp.open();
+            if (!data.downloadLink) {
+                alert('Configuration Error: Download link is missing. Please check Vercel environment variables.');
+            } else {
+                document.getElementById('direct-download-link').href = data.downloadLink;
+            }
             
         } catch (error) {
             alert('Error: ' + error.message);
             btnProceed.disabled = false;
-            btnProceed.textContent = 'Proceed to Payment';
+            btnProceed.textContent = 'Get Free E-Book (First 500)';
         }
     });
 });
