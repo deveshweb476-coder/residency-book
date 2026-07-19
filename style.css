@@ -1111,7 +1111,8 @@ body {
     transition: background 0.3s, color 0.3s; color: var(--ink-mid);
 }
 .social-links a:hover { background: var(--gold); color: var(--paper); }
-.footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px; text-align: center; font-size: 0.85rem; color: var(--ink-mid); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--ink-mid); }
+@media (max-width: 768px) { .footer-bottom { flex-direction: column; justify-content: center; gap: 10px; text-align: center; } }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
